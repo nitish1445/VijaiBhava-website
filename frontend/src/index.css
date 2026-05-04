@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --navy-light: #1a2f5a;
+    --gold: #c9a84c;
+    --gold-light: #e4c068;
+    --gold-pale: #f5e6c0;
+    --cream: #faf8f3;
+    --white: #ffffff;
+    --gray-soft: #8a9bb5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-800;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-block bg-transparent border border-[#c9a84c] text-[#c9a84c] px-8 py-3 text-sm tracking-widest uppercase font-medium transition-all duration-300 hover:bg-[#c9a84c] hover:text-[#0a1628] cursor-pointer;
+  }
+
+  .btn-gold-solid {
+    @apply inline-block bg-[#c9a84c] text-[#0a1628] px-8 py-3 text-sm tracking-widest uppercase font-semibold transition-all duration-300 hover:bg-[#e4c068] cursor-pointer;
+  }
+
+  .btn-white-outline {
+    @apply inline-block bg-transparent border border-white text-white px-8 py-3 text-sm tracking-widest uppercase font-medium transition-all duration-300 hover:bg-white hover:text-[#0a1628] cursor-pointer;
+  }
+
+  .section-label {
+    @apply text-[#c9a84c] text-xs tracking-[0.3em] uppercase font-semibold mb-3 block;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-light text-[#0a1628] leading-tight;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .section-title-white {
+    @apply text-4xl md:text-5xl font-light text-white leading-tight;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .gold-divider {
+    @apply w-16 h-px bg-[#c9a84c] my-6;
+  }
+
+  .nav-link {
+    @apply text-xs tracking-widest uppercase text-white/80 hover:text-[#c9a84c] transition-colors duration-300 font-medium;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .input-field {
+    @apply w-full bg-transparent border-b border-slate-300 py-3 px-0 text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-[#c9a84c] transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-navy { color: var(--navy); }
+  .text-gold { color: var(--gold); }
+  .bg-navy { background-color: var(--navy); }
+  .bg-navy-mid { background-color: var(--navy-mid); }
+  .bg-cream { background-color: var(--cream); }
+  .border-gold { border-color: var(--gold); }
+
+  .font-serif { font-family: 'Cormorant Garamond', serif; }
+  .font-sans-firm { font-family: 'Montserrat', sans-serif; }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c9a84c; }
+::-webkit-scrollbar-thumb:hover { background: #0a1628; }
+
+/* Page transition */
+.page-enter {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms ease, transform 400ms ease;
+}

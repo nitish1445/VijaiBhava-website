@@ -1,0 +1,68 @@
+import user from "../assets/LinkedinProfile.png";
+
+export const teamMembers = [
+  {
+    id: "arjun-mehra",
+    name: "Arjun Mehra",
+    title: "Managing Partner & Founder",
+    specialty: "Corporate Law",
+    bio: "Arjun founded the firm and has over 25 years of experience advising companies, startups, and investors on corporate structuring, M&A, and regulatory compliance under Indian law.",
+    image: user,
+  },
+  {
+    id: "dr-neha-kapoor",
+    name: "Dr. Neha Kapoor",
+    title: "Senior Partner",
+    specialty: "Intellectual Property",
+    bio: "A former engineer turned IP lawyer, Neha specializes in patents, trademarks, and technology law, advising startups and enterprises on protecting innovation in India and globally.",
+    image: user,
+  },
+  {
+    id: "rahul-khanna",
+    name: "Rahul Khanna",
+    title: "Senior Partner",
+    specialty: "Litigation",
+    bio: "Rahul has extensive experience representing clients before High Courts and the Supreme Court of India, handling complex civil, criminal, and commercial disputes.",
+    image: user,
+  },
+  {
+    id: "ananya-reddy",
+    name: "Ananya Reddy",
+    title: "Partner",
+    specialty: "Real Estate Law",
+    bio: "Ananya advises developers, investors, and individuals on property transactions, title due diligence, and RERA compliance across major Indian markets.",
+    image: user,
+  },
+  {
+    id: "vikram-singh",
+    name: "Vikram Singh",
+    title: "Partner",
+    specialty: "Criminal Defense",
+    bio: "A seasoned criminal lawyer, Vikram handles white-collar crime, bail matters, and trial advocacy with strong experience before trial courts and High Courts.",
+    image: null,
+  },
+  {
+    id: "priya-nair",
+    name: "Priya Nair",
+    title: "Partner",
+    specialty: "Tax Law",
+    bio: "Priya advises corporates and high-net-worth individuals on direct and indirect taxation, GST compliance, and international tax structuring.",
+    image: user,
+  },
+  {
+    id: "rohit-sharma",
+    name: "Rohit Sharma",
+    title: "Partner",
+    specialty: "Employment Law",
+    bio: "Rohit specializes in employment disputes, workplace policies, and advisory on labour laws including Industrial Disputes Act and POSH compliance.",
+    image:null,
+  },
+  {
+    id: "kavya-iyer",
+    name: "Kavya Iyer",
+    title: "Partner",
+    specialty: "Family Law",
+    bio: "Kavya handles matrimonial disputes, custody matters, and domestic violence cases with a balanced approach focused on resolution and client dignity.",
+    image: user,
+  },
+];

@@ -100,7 +100,7 @@ export default function Insights() {
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="section-label">Knowledge Hub</span>
-          <h1 className="section-title-white text-5xl md:text-6xl max-w-2xl">
+          <h1 className="section-title-white text-4xl md:text-6xl max-w-2xl">
             Legal Insights & Perspectives
           </h1>
           <div className="gold-divider" />
@@ -146,7 +146,7 @@ export default function Insights() {
       )}
 
       {/* Category Filter */}
-      <section className="bg-[#faf8f3] border-b border-slate-200 sticky top-[72px] z-40">
+      <section className="bg-[#faf8f3] border-b border-slate-200 sticky top-[60px] z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-2">
           {categories.map((c) => (
             <button

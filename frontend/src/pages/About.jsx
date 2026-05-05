@@ -1,11 +1,11 @@
 import TeamCard from "../components/TeamCard";
-import { teamMembers } from "../assets/data";
+import { teamMembers } from "../assets/userData";
 
 export default function About() {
   return (
     <main className="">
       {/* Page Header */}
-      <section className="bg-[#0a1628] py-28 relative overflow-hidden">
+      <section className="bg-[#0a1628] py-24 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -24,11 +24,11 @@ export default function About() {
             )`,
           }}
         />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="text-[11px] tracking-[0.35em] uppercase text-[#c9a84c] font-semibold block mb-4">
             About the Firm
           </span>
-          <h1 className="font-serif text-white text-5xl md:text-6xl lg:text-7xl font-light leading-tight max-w-3xl mb-6">
+          <h1 className="font-serif text-white text-4xl md:text-6xl lg:text-7xl font-light leading-tight max-w-3xl mb-6">
             Vijai Bhava Law Firm
           </h1>
           <div className="w-12 h-px bg-[#c9a84c] mb-8" />

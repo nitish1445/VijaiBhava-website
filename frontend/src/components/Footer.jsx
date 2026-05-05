@@ -9,17 +9,9 @@ import {
   FaClock,
 } from "react-icons/fa";
 import { BiCopyright } from "react-icons/bi";
+import { services } from "../assets/serviceData";
 
-const practiceAreas = [
-  "Corporate Law",
-  "Matrimonial & Family Law ",
-  "Intellectual Property Rights",
-  "General Litigation",
-  "White-Collar Crime (WCC)",
-  "Cyber Law & Data Protection",
-  "Aviation & Maritime Law",
-  "Alternative Dispute Resolution ",
-];
+// Use `services` from data for practice area links
 
 const quickLinks = [
   { label: "About the Firm", path: "/about" },
@@ -27,7 +19,7 @@ const quickLinks = [
   { label: "Practice Areas", path: "/services" },
   { label: "Awards & Recognition", path: "/awards" },
   { label: "Insights & Articles", path: "/insights" },
-  { label: "Careers", path: "/career" },
+  { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
 ];
 
@@ -90,13 +82,13 @@ export default function Footer() {
               Practice Areas
             </h4>
             <ul className="space-y-2">
-              {practiceAreas.map((area) => (
-                <li key={area}>
+              {services.map((area) => (
+                <li key={area.slug}>
                   <Link
-                    to="/services"
+                    to={`/services/${area.slug}`}
                     className="group flex items-center gap-5 text-white/60 text-xs font-light tracking-wide transition-all duration-300 hover:text-[#c9a84c]"
                   >
-                    <span>{area}</span>
+                    <span>{area.title}</span>
                     <span className="opacity-0 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#c9a84c]">
                       →
                     </span>
@@ -153,7 +145,7 @@ export default function Footer() {
                 </span>
 
                 <div className="flex items-start gap-3">
-                  <FaPhoneAlt className="text-[#c9a84c] mt-1 text-sm shrink-0" />
+                  <FaPhoneAlt className="text-[#c9a84c] text-xs shrink-0" />
 
                   <div className="flex flex-col text-xs">
                     <a
@@ -168,10 +160,10 @@ export default function Footer() {
 
               {/* Email */}
               <li className="flex items-center gap-3 group">
-                <FaEnvelope className="text-[#c9a84c] mt-1 text-sm shrink-0" />
+                <FaEnvelope className="text-[#c9a84c] text-xs shrink-0" />
                 <a
                   href="mailto:india@vijaibhavalawfirm.com"
-                  className="text-white/60 text-sm hover:text-[#c9a84c] transition-colors break-all"
+                  className="text-white/60 text-xs hover:text-[#c9a84c] transition-colors break-all"
                 >
                   india@vijaibhavalawfirm.com
                 </a>
@@ -179,9 +171,9 @@ export default function Footer() {
 
               {/* Timing */}
               <li className="flex items-start gap-3 group">
-                <FaClock className="text-[#c9a84c] mt-1 text-sm shrink-0" />
+                <FaClock className="text-[#c9a84c] mt-1 text-xs shrink-0" />
                 <span className="text-white/60 text-xs leading-relaxed">
-                  Mon – Fri: 8:00 am – 6:00 pm
+                  Mon to Fri : 8 : 00 am - 6 : 00 pm
                   <br />
                   <span className="text-white/40 text-[10px]">
                     Emergency: 24/7

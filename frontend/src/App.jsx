@@ -7,11 +7,13 @@ import DisclaimerModal from "./components/DisclaimerModal";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
+import ServiceDetail from "./pages/ServiceDetail";
 import People from "./pages/People";
 import LawyerDetail from "./pages/LawyerDetail";
 import Awards from "./pages/Awards";
 import Insights from "./pages/Insights";
 import Career from "./pages/Career";
+import CareerDetail from "./pages/CareerDetail";
 import Contact from "./pages/Contact";
 
 function ScrollToTop() {
@@ -32,11 +34,13 @@ function AppLayout() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Service />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/people" element={<People />} />
         <Route path="/people/:id" element={<LawyerDetail />} />
         <Route path="/awards" element={<Awards />} />
         <Route path="/insights" element={<Insights />} />
-        <Route path="/career" element={<Career />} />
+        <Route path="/careers" element={<Career />} />
+        <Route path="/careers/:slug" element={<CareerDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route
           path="*"

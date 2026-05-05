@@ -9,17 +9,12 @@ const offices = [
     phone: "+91 1135783931",
   },
   {
-    city: "Los Angeles",
-    address: "2000 Avenue of the Stars, Suite 1100",
-    state: "Los Angeles, CA 90067",
-    phone: "+1 (310) 555-0200",
+    city: "Rohini Delhi",
+    address: "C12/12 1st Floor MIG Flat Sec 03",
+    state: "Delhi, 110084",
+    phone: "+91 (310) 555-0200",
   },
-  // {
-  //   city: "Chicago",
-  //   address: "71 S. Wacker Drive, Suite 3200",
-  //   state: "Chicago, IL 60606",
-  //   phone: "+1 (312) 555-0300",
-  // },
+  
 ];
 const mapQuery = encodeURIComponent(offices[0].address);
 
@@ -61,7 +56,7 @@ export default function Contact() {
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="section-label">Get In Touch</span>
-          <h1 className="section-title-white text-5xl md:text-6xl max-w-2xl">
+          <h1 className="section-title-white text-4xl md:text-6xl max-w-2xl">
             We're Ready to Discuss Your Case
           </h1>
           <div className="gold-divider" />
@@ -85,7 +80,7 @@ export default function Contact() {
 
             {submitted ? (
               <div className="border border-[#c9a84c]/40 bg-[#faf8f3] p-10 text-center">
-                <div className="text-4xl text-green-600 mb-4 flex justify-center ">
+                <div className="text-5xl text-[#c9a84c] mb-4 flex justify-center ">
                   <BsCheckCircle />
                 </div>
                 <h3 className="font-serif text-2xl text-[#0a1628] mb-3">
@@ -261,7 +256,7 @@ export default function Contact() {
                     key={office.city}
                     className="border-r border-b border-slate-200 p-6 hover:bg-[#faf8f3] transition-colors group"
                   >
-                    <h4 className="font-serif text-lg text-[#0a1628] mb-2 group-hover:text-[#c9a84c] transition-colors">
+                    <h4 className="font-serif text-lg font-semibold text-[#0a1628] mb-2 group-hover:text-[#c9a84c] transition-colors">
                       {office.city}
                     </h4>
                     <p className="text-slate-500 text-xs leading-relaxed">
@@ -318,33 +313,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Map Placeholder */}
-      {/* <section className="h-80 bg-[#1a2f5a] flex items-center justify-center relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,0.1) 40px, rgba(201,168,76,0.1) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,0.1) 40px, rgba(201,168,76,0.1) 41px)`,
-          }}
-        />
-        <div className="text-center relative z-10">
-          <div className="text-4xl mb-4">VISIT US OUR ROHINI OFFICE</div>
-          <p className="text-white/50 text-sm">
-            C12/12 1st Floor MIG Flat Sec 03
-
-          </p>
-          <p className="text-white/30 text-xs mt-1">Rohini Delhi, 110085</p>
-          <a
-            href="https://maps.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold text-[11px] py-2 px-6 mt-5 inline-block"
-          >
-            Open in Google Maps
-          </a>
-        </div>
-        
-      </section> */}
 
       <section className="py-10 md:py-14 bg-[#1a2f5a]">
         <div

@@ -42,11 +42,15 @@ export default function TeamCard({ member }) {
           {title}
         </p>
         {bio && (
-          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">{bio}</p>
+          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
+            {bio}
+          </p>
         )}
         <div className="mt-4 flex items-center gap-2 text-[#0a1628] text-[10px] tracking-widest uppercase font-semibold group-hover:text-[#c9a84c] transition-colors">
           <span>View Profile</span>
-          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          <span className="transition-transform duration-300 group-hover:translate-x-1">
+            →
+          </span>
         </div>
       </div>
     </Link>

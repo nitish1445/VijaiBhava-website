@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TeamCard from "../components/TeamCard";
-import { teamMembers } from "../assets/data";
+import { teamMembers } from "../assets/userData";
 
-const specialties = ["All", "Corporate Law", "Litigation", "Real Estate", "IP Law", "Employment", "Family Law", "Criminal Defense", "Tax Law"];
+const specialties = ["All", "Corporate Law", "Litigation", "Real Estate", "IP Law", "Employment", "Family Law", "Criminal Defense", "Tax Law",];
 
 export default function People() {
   const [filter, setFilter] = useState("All");
@@ -20,7 +20,7 @@ export default function People() {
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="section-label">Our Attorneys</span>
-          <h1 className="section-title-white text-5xl md:text-6xl max-w-2xl">
+          <h1 className="section-title-white text-4xl md:text-6xl max-w-2xl">
             Meet the People Behind the Practice
           </h1>
           <div className="gold-divider" />
@@ -32,7 +32,7 @@ export default function People() {
       </section>
 
       {/* Filter */}
-      <section className="bg-[#faf8f3] border-b border-slate-200 sticky top-[72px] z-40">
+      <section className="bg-[#faf8f3] border-b border-slate-200 sticky top-[60px] z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-2 overflow-x-auto">
           {specialties.map((s) => (
             <button

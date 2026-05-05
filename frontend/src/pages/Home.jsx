@@ -4,6 +4,14 @@ import Counters from "../components/Counters";
 import Testimonials from "../components/Testimonials";
 import CTAAbout from "../components/CTAAbout";
 import { Link } from "react-router-dom";
+import {
+  FaBalanceScale,
+  FaShieldAlt,
+  FaLightbulb,
+  FaChessKnight,
+  FaEye,
+  FaGavel,
+} from "react-icons/fa";
 
 const insights = [
   {
@@ -33,7 +41,7 @@ export default function Home() {
       <Hero />
 
       {/* Core Pillars */}
-      
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
@@ -50,17 +58,21 @@ export default function Home() {
           </div>
 
           {/* Pillars Grid */}
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {/* Pillar 1 */}
-            <div className="group relative flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              {/* Top Accent */}
+            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaBalanceScale className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+              </div>
+
               <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
 
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4  transition-colors">
+              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
                 Strategic Excellence
               </h3>
 
-              <p className="text-slate-600 text-sm leading-relaxed transition-colors">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 We don't just provide legal opinions; we deliver strategic
                 roadmaps—ensuring every legal decision aligns with your
                 long-term objectives.
@@ -68,14 +80,18 @@ export default function Home() {
             </div>
 
             {/* Pillar 2 */}
-            <div className="group relative flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaShieldAlt className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+              </div>
+
               <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
 
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4  transition-colors">
+              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
                 Integrity & Transparency
               </h3>
 
-              <p className="text-slate-600 text-sm leading-relaxed transition-colors">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 We prioritize clarity and honesty—building long-term
                 relationships through ethical practice and transparent
                 communication.
@@ -83,14 +99,18 @@ export default function Home() {
             </div>
 
             {/* Pillar 3 */}
-            <div className="group relative flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaLightbulb className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+              </div>
+
               <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
 
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4 transition-colors">
+              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
                 Future-Ready Advocacy
               </h3>
 
-              <p className="text-slate-600 text-sm leading-relaxed transition-colors">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 We stay ahead of evolving regulations and
                 technologies—protecting your interests today while preparing you
                 for tomorrow.
@@ -101,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Our Promise */}
-      
+
       <section className="py-24 bg-[#0a1628] text-white">
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
@@ -121,59 +141,70 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-white/70 text-sm leading-relaxed">
               At Vijai Bhava Law Firm, we understand that behind every case is a
-              person, a family, or a business that has placed its trust in us.
-              Whether you engage with us in Rohini or digitally, we make a clear
-              commitment—to protect your interests and deliver meaningful
-              results.
+              person, a family, or a business that has placed its trust in us...
             </p>
           </div>
 
-          {/* Promise Grid */}
+          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1 */}
             <div className="group p-8 border border-white/10 hover:border-[#c9a84c] transition-all duration-300 hover:-translate-y-1">
-              <h3 className="font-serif text-lg font-semibold mb-3 text-white group-hover:text-[#c9a84c] transition-colors">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaChessKnight className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
+              <h3 className="font-serif text-lg font-semibold mb-3 group-hover:text-[#c9a84c] transition-colors">
                 Strategic Precision
               </h3>
+
               <p className="text-white/60 text-sm leading-relaxed">
                 We look beyond the surface of legal issues—applying the law
-                strategically to protect your future and align outcomes with
-                your broader goals.
+                strategically...
               </p>
             </div>
 
             {/* Card 2 */}
             <div className="group p-8 border border-white/10 hover:border-[#c9a84c] transition-all duration-300 hover:-translate-y-1">
-              <h3 className="font-serif text-lg font-semibold mb-3 text-white group-hover:text-[#c9a84c] transition-colors">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaEye className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
+              <h3 className="font-serif text-lg font-semibold mb-3 group-hover:text-[#c9a84c] transition-colors">
                 Absolute Transparency
               </h3>
+
               <p className="text-white/60 text-sm leading-relaxed">
-                No hidden agendas, no unnecessary complexity—just clear, honest
-                communication about risks, strategy, and cost at every stage.
+                No hidden agendas, no unnecessary complexity...
               </p>
             </div>
 
             {/* Card 3 */}
             <div className="group p-8 border border-white/10 hover:border-[#c9a84c] transition-all duration-300 hover:-translate-y-1">
-              <h3 className="font-serif text-lg font-semibold mb-3 text-white group-hover:text-[#c9a84c] transition-colors">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaGavel className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
+              <h3 className="font-serif text-lg font-semibold mb-3 group-hover:text-[#c9a84c] transition-colors">
                 Relentless Advocacy
               </h3>
+
               <p className="text-white/60 text-sm leading-relaxed">
-                From high-stakes disputes to complex regulatory matters, we
-                represent your interests with focus, determination, and
-                discipline.
+                From high-stakes disputes to complex regulatory matters...
               </p>
             </div>
 
             {/* Card 4 */}
             <div className="group p-8 border border-white/10 hover:border-[#c9a84c] transition-all duration-300 hover:-translate-y-1">
-              <h3 className="font-serif text-lg font-semibold mb-3 text-white group-hover:text-[#c9a84c] transition-colors">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaLightbulb className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
+              <h3 className="font-serif text-lg font-semibold mb-3 group-hover:text-[#c9a84c] transition-colors">
                 Future-Proof Counsel
               </h3>
+
               <p className="text-white/60 text-sm leading-relaxed">
-                We stay ahead of evolving regulations—from compliance frameworks
-                to emerging technologies—so you remain protected before risks
-                arise.
+                We stay ahead of evolving regulations...
               </p>
             </div>
           </div>

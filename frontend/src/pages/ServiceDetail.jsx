@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import TeamCard from "../components/TeamCard";
 import { services } from "../assets/serviceData";
+import { teamMembers } from "../assets/userData";
 import {
   FaBalanceScale,
   FaGavel,
@@ -49,14 +50,19 @@ export default function ServiceDetail() {
     );
   }
 
-  const lawyerCards = service.lawyers.map((lawyer) => ({
-    id: lawyer.id,
-    name: lawyer.name,
-    title: lawyer.role,
-    specialty: service.title,
-    image: lawyer.image,
-    bio: lawyer.bio,
-  }));
+  const lawyerCards = service.lawyers.map((lawyer) => {
+    const member = teamMembers.find((m) => m.id === lawyer.id);
+
+    return {
+      id: lawyer.id,
+      name: lawyer.name || member?.name,
+      title: lawyer.role || member?.title,
+      specialty: service.title,
+      image: member?.image ?? lawyer.image ?? null,
+      bio: member?.bio ?? lawyer.bio ?? null,
+      gender: member?.gender ?? null,
+    };
+  });
 
   const relatedServices = (service.relatedServices || [])
     .map((relatedSlug) => services.find((item) => item.slug === relatedSlug))

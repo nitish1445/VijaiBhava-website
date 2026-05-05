@@ -1,5 +1,3 @@
-import user from "../assets/LinkedinProfile.png";
-
 export const teamMembers = [
   {
     id: "arjun-mehra",
@@ -7,7 +5,8 @@ export const teamMembers = [
     title: "Managing Partner & Founder",
     specialty: "Corporate Law",
     bio: "Arjun founded the firm and has over 25 years of experience advising companies, startups, and investors on corporate structuring, M&A, and regulatory compliance under Indian law.",
-    image: user,
+    gender: "male",
+    image: null,
   },
   {
     id: "dr-neha-kapoor",
@@ -15,7 +14,8 @@ export const teamMembers = [
     title: "Senior Partner",
     specialty: "Intellectual Property",
     bio: "A former engineer turned IP lawyer, Neha specializes in patents, trademarks, and technology law, advising startups and enterprises on protecting innovation in India and globally.",
-    image: user,
+    gender: "female",
+    image: null,
   },
   {
     id: "rahul-khanna",
@@ -23,7 +23,8 @@ export const teamMembers = [
     title: "Senior Partner",
     specialty: "Litigation",
     bio: "Rahul has extensive experience representing clients before High Courts and the Supreme Court of India, handling complex civil, criminal, and commercial disputes.",
-    image: user,
+    gender: "male",
+    image: null,
   },
   {
     id: "ananya-reddy",
@@ -31,7 +32,8 @@ export const teamMembers = [
     title: "Partner",
     specialty: "Real Estate Law",
     bio: "Ananya advises developers, investors, and individuals on property transactions, title due diligence, and RERA compliance across major Indian markets.",
-    image: user,
+    gender: "female",
+    image: null,
   },
   {
     id: "vikram-singh",
@@ -39,6 +41,7 @@ export const teamMembers = [
     title: "Partner",
     specialty: "Criminal Defense",
     bio: "A seasoned criminal lawyer, Vikram handles white-collar crime, bail matters, and trial advocacy with strong experience before trial courts and High Courts.",
+    gender: "male",
     image: null,
   },
   {
@@ -47,7 +50,8 @@ export const teamMembers = [
     title: "Partner",
     specialty: "Tax Law",
     bio: "Priya advises corporates and high-net-worth individuals on direct and indirect taxation, GST compliance, and international tax structuring.",
-    image: user,
+    gender: "female",
+    image: null,
   },
   {
     id: "rohit-sharma",
@@ -55,6 +59,7 @@ export const teamMembers = [
     title: "Partner",
     specialty: "Employment Law",
     bio: "Rohit specializes in employment disputes, workplace policies, and advisory on labour laws including Industrial Disputes Act and POSH compliance.",
+    gender: "male",
     image:null,
   },
   {
@@ -63,6 +68,70 @@ export const teamMembers = [
     title: "Partner",
     specialty: "Family Law",
     bio: "Kavya handles matrimonial disputes, custody matters, and domestic violence cases with a balanced approach focused on resolution and client dignity.",
-    image: user,
+    gender: "female",
+    image: null,
+  },
+  {
+    id: "william-harrington",
+    name: "William Harrington III",
+    title: "Managing Partner",
+    specialty: "Corporate & Transactions",
+    bio: "William leads major transactional matters and advises on cross-border M&A and complex corporate restructurings.",
+    gender: "male",
+    image: null,
+  },
+  {
+    id: "elena-vasquez",
+    name: "Elena Vasquez",
+    title: "Partner",
+    specialty: "Aviation & Maritime",
+    bio: "Elena advises on aviation and shipping disputes, leasing, and cross-border transport matters.",
+    gender: "female",
+    image: null,
+  },
+  {
+    id: "marcus-thompson",
+    name: "Marcus Thompson",
+    title: "Senior Partner",
+    specialty: "Litigation",
+    bio: "Marcus is a trial lawyer with deep experience in complex commercial litigation and arbitration.",
+    gender: "male",
+    image: null,
+  },
+  {
+    id: "james-whitfield",
+    name: "James Whitfield",
+    title: "Partner",
+    specialty: "White-Collar Crime",
+    bio: "James focuses on investigations, regulatory defense, and high-stakes criminal matters for corporate clients.",
+    gender: "male",
+    image: null,
+  },
+  {
+    id: "robert-cunningham",
+    name: "Robert Cunningham",
+    title: "Partner",
+    specialty: "ADR & Arbitration",
+    bio: "Robert handles arbitration and mediation matters across commercial and maritime disputes.",
+    gender: "male",
+    image: null,
+  },
+  {
+    id: "olivia-park",
+    name: "Olivia Park",
+    title: "Partner",
+    specialty: "Family Law",
+    bio: "Olivia advises on matrimonial law, custody, and family-related financial settlements.",
+    gender: "female",
+    image: null,
+  },
+  {
+    id: "sarah-chen",
+    name: "Dr. Sarah Chen",
+    title: "Senior Partner",
+    specialty: "Intellectual Property",
+    bio: "Sarah is an IP specialist focusing on patents, trademarks and complex portfolio management.",
+    gender: "female",
+    image: null,
   },
 ];

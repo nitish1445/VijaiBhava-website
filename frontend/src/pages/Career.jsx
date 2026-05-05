@@ -7,6 +7,7 @@ import {
   FaGlobe,
   FaHome,
   FaGraduationCap,
+  FaStar,
 } from "react-icons/fa";
 
 const benefits = [
@@ -165,23 +166,37 @@ export default function Career() {
             <h3 className="font-serif text-2xl text-white font-light">
               What Associates Say
             </h3>
+
             <div className="w-8 h-px bg-[#c9a84c]" />
+
             {[
               {
                 quote:
                   "The mentorship I've received here has accelerated my career by years.",
                 name: "Nitish Yadav, Associate",
+                rating: 5,
               },
               {
                 quote:
-                  "Viaji Bhava gives you real responsibility from day one. I was in a courtroom in my first month.",
-                name: "John Doe.., Litigation",
+                  "Vijai Bhava gives you real responsibility from day one. I was in a courtroom in my first month.",
+                name: "Aman Verma, Litigation Associate",
+                rating: 5,
               },
             ].map((q) => (
               <div key={q.name} className="border-l-2 border-[#c9a84c]/40 pl-5">
+                {/* ⭐ Stars */}
+                <div className="flex gap-1 mb-2">
+                  {[...Array(q.rating)].map((_, i) => (
+                    <FaStar key={i} className="text-[#c9a84c] text-xs" />
+                  ))}
+                </div>
+
+                {/* Quote */}
                 <p className="text-white/70 text-sm italic leading-relaxed mb-2">
                   "{q.quote}"
                 </p>
+
+                {/* Name */}
                 <p className="text-[#c9a84c] text-[10px] tracking-widest uppercase">
                   {q.name}
                 </p>

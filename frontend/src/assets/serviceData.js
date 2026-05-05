@@ -8,7 +8,7 @@ import {
   FaLaptopCode,
   FaPlane,
 } from "react-icons/fa";
-import user from "./LinkedinProfile.png";
+const user = null;
 
 export const services = [
   {
@@ -47,24 +47,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "william-harrington",
-        name: "William Harrington III",
-        role: "Managing Partner",
-        image: user,
-      },
-      {
-        id: "priya-nair",
-        name: "Priya Nair",
-        role: "Partner",
-        image: user,
-      },
-      {
-        id: "elena-vasquez",
-        name: "Elena Vasquez",
-        role: "Partner",
-        image: user,
-      },
+      { id: "william-harrington" },
+      { id: "priya-nair" },
+      { id: "elena-vasquez" },
     ],
     relatedServices: ["litigation", "intellectual-property", "tax-law"],
     caseTypes: [
@@ -133,24 +118,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "marcus-thompson",
-        name: "Marcus Thompson",
-        role: "Senior Partner",
-        image: user,
-      },
-      {
-        id: "james-whitfield",
-        name: "James Whitfield",
-        role: "Partner",
-        image: user,
-      },
-      {
-        id: "robert-cunningham",
-        name: "Robert Cunningham",
-        role: "Partner",
-        image: user,
-      },
+      { id: "marcus-thompson" },
+      { id: "james-whitfield" },
+      { id: "robert-cunningham" },
     ],
     relatedServices: ["corporate-law", "white-collar-crime", "adr"],
     caseTypes: [
@@ -218,14 +188,9 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "olivia-park", name: "Olivia Park", role: "Partner", image: user },
-      {
-        id: "sarah-chen",
-        name: "Dr. Sarah Chen",
-        role: "Senior Partner",
-        image: user,
-      },
-      { id: "priya-nair", name: "Priya Nair", role: "Partner", image: user },
+      { id: "olivia-park" },
+      { id: "sarah-chen" },
+      { id: "priya-nair" },
     ],
     relatedServices: ["adr", "tax-law", "real-estate"],
     caseTypes: [
@@ -301,24 +266,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "marcus-thompson",
-        name: "Marcus Thompson",
-        role: "Senior Partner",
-        image: user,
-      },
-      {
-        id: "william-harrington",
-        name: "William Harrington III",
-        role: "Managing Partner",
-        image: user,
-      },
-      {
-        id: "robert-cunningham",
-        name: "Robert Cunningham",
-        role: "Partner",
-        image: user,
-      },
+      { id: "marcus-thompson" },
+      { id: "william-harrington" },
+      { id: "robert-cunningham" },
     ],
     relatedServices: ["litigation", "corporate-law", "employment-law"],
     caseTypes: [
@@ -388,24 +338,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "sarah-chen",
-        name: "Dr. Sarah Chen",
-        role: "Senior Partner",
-        image: user,
-      },
-      {
-        id: "william-harrington",
-        name: "William Harrington III",
-        role: "Managing Partner",
-        image: user,
-      },
-      {
-        id: "elena-vasquez",
-        name: "Elena Vasquez",
-        role: "Partner",
-        image: user,
-      },
+      { id: "sarah-chen" },
+      { id: "william-harrington" },
+      { id: "elena-vasquez" },
     ],
     relatedServices: ["corporate-law", "cyber-law", "litigation"],
     caseTypes: [
@@ -480,24 +415,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "james-whitfield",
-        name: "James Whitfield",
-        role: "Partner",
-        image: user,
-      },
-      {
-        id: "marcus-thompson",
-        name: "Marcus Thompson",
-        role: "Senior Partner",
-        image: user,
-      },
-      {
-        id: "william-harrington",
-        name: "William Harrington III",
-        role: "Managing Partner",
-        image: user,
-      },
+      { id: "james-whitfield" },
+      { id: "marcus-thompson" },
+      { id: "william-harrington" },
     ],
     relatedServices: ["litigation", "corporate-law", "cyber-law"],
     caseTypes: [
@@ -564,19 +484,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "sarah-chen",
-        name: "Dr. Sarah Chen",
-        role: "Senior Partner",
-        image: user,
-      },
-      { id: "priya-nair", name: "Priya Nair", role: "Partner", image: user },
-      {
-        id: "robert-cunningham",
-        name: "Robert Cunningham",
-        role: "Partner",
-        image: user,
-      },
+      { id: "sarah-chen" },
+      { id: "priya-nair" },
+      { id: "robert-cunningham" },
     ],
     relatedServices: [
       "intellectual-property",
@@ -646,24 +556,9 @@ export const services = [
       },
     ],
     lawyers: [
-      {
-        id: "elena-vasquez",
-        name: "Elena Vasquez",
-        role: "Partner",
-        image: user,
-      },
-      {
-        id: "william-harrington",
-        name: "William Harrington III",
-        role: "Managing Partner",
-        image: user,
-      },
-      {
-        id: "marcus-thompson",
-        name: "Marcus Thompson",
-        role: "Senior Partner",
-        image: user,
-      },
+      { id: "elena-vasquez" },
+      { id: "william-harrington" },
+      { id: "marcus-thompson" },
     ],
     relatedServices: ["litigation", "corporate-law", "adr"],
     caseTypes: [

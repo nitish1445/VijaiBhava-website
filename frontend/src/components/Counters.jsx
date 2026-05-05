@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { end: 35, suffix: "+", label: "Years of Excellence", desc: "Serving clients since 1987" },
+  { end: 41, suffix: "+", label: "Years of Excellence", desc: "Serving clients since 1987" },
   { end: 2400, suffix: "+", label: "Cases Successfully Closed", desc: "Across all practice areas" },
   { end: 98, suffix: "%", label: "Client Satisfaction Rate", desc: "Based on annual surveys" },
   { end: 48, suffix: "", label: "Expert Attorneys", desc: "Across 12 specializations" },

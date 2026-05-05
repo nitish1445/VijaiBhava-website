@@ -1,5 +1,36 @@
 import TeamCard from "../components/TeamCard";
 import { teamMembers } from "../assets/userData";
+import {
+  FaChessKnight,
+  FaEye,
+  FaGavel,
+  FaLightbulb,
+  FaBullseye,
+  FaShieldAlt,
+} from "react-icons/fa";
+
+const promises = [
+  {
+    title: "Strategic Precision",
+    text: "Tailored strategies focused on clear commercial outcomes.",
+    icon: <FaChessKnight />,
+  },
+  {
+    title: "Absolute Transparency",
+    text: "Open advice, clear billing, and direct communication.",
+    icon: <FaEye />,
+  },
+  {
+    title: "Relentless Advocacy",
+    text: "Assertive representation both in negotiations and in court.",
+    icon: <FaGavel />,
+  },
+  {
+    title: "Future-Proof Counsel",
+    text: "Advice built to withstand regulatory and market change.",
+    icon: <FaLightbulb />,
+  },
+];
 
 export default function About() {
   return (
@@ -93,49 +124,48 @@ export default function About() {
 
       {/* Our Promise (About) */}
       <section className="py-24 bg-[#0a1628] text-white relative overflow-hidden">
+        {/* Background */}
         <div
           className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `radial-gradient(circle at 20% 50%, #c9a84c 0%, transparent 50%), radial-gradient(circle at 80% 50%, #c9a84c 0%, transparent 50%)`,
           }}
         />
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Header */}
           <div className="text-center mb-14">
             <span className="text-[11px] tracking-[0.35em] uppercase text-[#c9a84c] font-semibold block mb-4">
               Our Promise
             </span>
+
             <h2 className="font-serif text-3xl md:text-4xl font-light">
               How We Deliver Results
             </h2>
+
             <div className="w-12 h-px bg-[#c9a84c] mx-auto mt-6" />
           </div>
 
+          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                title: "Strategic Precision",
-                text: "Tailored strategies focused on clear commercial outcomes.",
-              },
-              {
-                title: "Absolute Transparency",
-                text: "Open advice, clear billing, and direct communication.",
-              },
-              {
-                title: "Relentless Advocacy",
-                text: "Assertive representation both in negotiations and in court.",
-              },
-              {
-                title: "Future-Proof Counsel",
-                text: "Advice built to withstand regulatory and market change.",
-              },
-            ].map((p) => (
+            {promises.map((p) => (
               <div
                 key={p.title}
                 className="group p-8 border border-white/10 hover:border-[#c9a84c] transition-all duration-300 hover:-translate-y-1"
               >
+                {/* Icon */}
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c] group-hover:scale-105 group-hover:shadow-[0_4px_20px_rgba(201,168,76,0.25)]">
+                  <span className="text-[#c9a84c] text-sm transition-all duration-300 group-hover:text-black">
+                    {p.icon}
+                  </span>
+                </div>
+
+                {/* Title */}
                 <h4 className="font-serif text-lg font-semibold mb-3 text-white group-hover:text-[#c9a84c] transition-colors">
                   {p.title}
                 </h4>
+
+                {/* Text */}
                 <p className="text-white/60 text-sm leading-relaxed">
                   {p.text}
                 </p>
@@ -170,23 +200,34 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
+
       <section className="bg-white py-28">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
           <div className="text-center mb-16">
             <span className="text-[16px] tracking-[0.35em] uppercase text-[#c9a84c] font-semibold block mb-4">
               Our Foundation
             </span>
+
             <h2 className="font-serif text-4xl md:text-5xl font-light text-[#0a1628]">
               Mission & Vision
             </h2>
+
             <div className="w-12 h-px bg-[#c9a84c] mx-auto mt-6" />
           </div>
 
+          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="col-span-1 md:col-span-2 p-10 bg-[#faf8f3] border border-slate-100">
+            {/* Mission */}
+            <div className="group p-10 bg-[#faf8f3] border border-slate-100 col-span-1 md:col-span-2">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaBullseye className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
               <h3 className="font-serif text-2xl text-[#0a1628] mb-4 font-semibold">
                 Our Mission
               </h3>
+
               <p className="text-slate-600 text-sm leading-relaxed">
                 We deliver precise, commercially minded legal advice that helps
                 clients make confident decisions. Our approach pairs rigorous
@@ -194,10 +235,33 @@ export default function About() {
               </p>
             </div>
 
+            {/* Vision */}
+            <div className="group p-10 bg-[#faf8f3] border border-slate-100 col-span-1 md:col-span-2">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaEye className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
+              <h3 className="font-serif text-2xl text-[#0a1628] mb-4 font-semibold">
+                Our Vision
+              </h3>
+
+              <p className="text-slate-600 text-sm leading-relaxed">
+                To be a trusted legal partner known for strategic insight,
+                ethical excellence, and forward-thinking advocacy—empowering
+                clients to navigate complex legal landscapes with confidence.
+              </p>
+            </div>
+
+            {/* Pillars */}
             <div className="group p-10 bg-white border border-slate-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all duration-300">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaChessKnight className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
               <h3 className="font-serif text-xl text-[#0a1628] mb-4 font-semibold group-hover:text-[#c9a84c] transition-colors">
                 Strategic Excellence
               </h3>
+
               <p className="text-slate-600 text-sm leading-relaxed">
                 Litigation-ready and transaction-savvy counsel crafted to meet
                 both immediate needs and long-term objectives.
@@ -205,19 +269,29 @@ export default function About() {
             </div>
 
             <div className="group p-10 bg-white border border-slate-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all duration-300">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaShieldAlt className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
               <h3 className="font-serif text-xl text-[#0a1628] mb-4 font-semibold group-hover:text-[#c9a84c] transition-colors">
                 Integrity & Transparency
               </h3>
+
               <p className="text-slate-600 text-sm leading-relaxed">
                 Open communication, clear fee structures, and principled
                 guidance at every step of the engagement.
               </p>
             </div>
 
-            <div className="group p-10 bg-white border border-slate-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all duration-300">
+            <div className="group p-10 bg-white border border-slate-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all duration-300 md:col-span-2">
+              <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 transition-all duration-300 group-hover:bg-[#c9a84c]">
+                <FaLightbulb className="text-[#c9a84c] group-hover:text-black transition-all duration-300" />
+              </div>
+
               <h3 className="font-serif text-xl text-[#0a1628] mb-4 font-semibold group-hover:text-[#c9a84c] transition-colors">
                 Future-Ready Advocacy
               </h3>
+
               <p className="text-slate-600 text-sm leading-relaxed">
                 Proactive counsel designed for emerging industries and the
                 evolving regulatory landscape.

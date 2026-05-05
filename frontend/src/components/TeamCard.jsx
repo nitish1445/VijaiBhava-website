@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
+import maleAvatar from "../assets/maleLawyer.png";
+import femaleAvatar from "../assets/femaleLawyer.png";
 
 export default function TeamCard({ member }) {
-  const { id, name, title, specialty, image, bio } = member;
+  const { id, name, title, specialty, image, bio, gender } = member;
+
+  const avatar = image || (gender === "male" ? maleAvatar : gender === "female" ? femaleAvatar : null);
+  const initials = name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
   return (
     <Link
@@ -10,9 +20,9 @@ export default function TeamCard({ member }) {
     >
       {/* Image */}
       <div className="relative overflow-hidden h-72 bg-[#1a2f5a]">
-        {image ? (
+        {avatar ? (
           <img
-            src={image}
+            src={avatar}
             alt={name}
             className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
           />
@@ -20,7 +30,7 @@ export default function TeamCard({ member }) {
           <div className="w-full h-full flex items-center justify-center">
             <div className="w-28 h-28 rounded-full bg-[#c9a84c]/20 border border-[#c9a84c]/30 flex items-center justify-center">
               <span className="text-4xl text-[#c9a84c]/60 font-serif font-light">
-                {name.charAt(0)}
+                {initials}
               </span>
             </div>
           </div>

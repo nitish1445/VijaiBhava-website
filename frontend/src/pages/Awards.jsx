@@ -1,25 +1,25 @@
 import Counters from "../components/Counters";
 
 const awards = [
-  { year: "2024", title: "Law Firm of the Year", org: "Chambers USA", category: "Corporate Law" },
-  { year: "2024", title: "Top 10 Litigation Firm", org: "The Legal 500", category: "Litigation" },
-  { year: "2023", title: "Best Law Firm — NY", org: "Super Lawyers", category: "Multiple Practice Areas" },
-  { year: "2023", title: "AmLaw 100 Ranking", org: "The American Lawyer", category: "Revenue & Growth" },
-  { year: "2023", title: "Diversity Leader Award", org: "Minority Corporate Counsel", category: "Culture & Inclusion" },
-  { year: "2022", title: "Pro Bono Award", org: "New York State Bar", category: "Community Service" },
-  { year: "2022", title: "Top M&A Counsel", org: "Bloomberg Law", category: "Corporate Law" },
-  { year: "2021", title: "IP Litigation Firm of the Year", org: "Managing IP", category: "Intellectual Property" },
-  { year: "2021", title: "Employer of Choice", org: "National Law Journal", category: "Culture" },
-  { year: "2020", title: "Real Estate Practice Excellence", org: "Real Estate Alert", category: "Real Estate" },
+  { year: "2024", title: "Law Firm of the Year", org: "India Business Law Journal", category: "Corporate Law" },
+  { year: "2024", title: "Top Dispute Resolution Firm", org: "Legal 500 Asia Pacific", category: "Litigation" },
+  { year: "2023", title: "Emerging Law Firm Award", org: "Bar Council of India", category: "Overall Excellence" },
+  { year: "2023", title: "Excellence in Corporate Advisory", org: "BW Legal World", category: "Corporate Law" },
+  { year: "2023", title: "Best Boutique Law Firm", org: "Forbes India Legal Powerlist", category: "Multi-Practice" },
+  { year: "2022", title: "Pro Bono Excellence Award", org: "Delhi High Court Legal Services Committee", category: "Community Service" },
+  { year: "2022", title: "Top M&A Legal Advisor", org: "Economic Times Legal Awards", category: "Corporate Law" },
+  { year: "2021", title: "IP Law Firm of the Year", org: "Managing IP Asia", category: "Intellectual Property" },
+  { year: "2021", title: "Best Employer (Legal)", org: "Great Place to Work India", category: "Work Culture" },
+  { year: "2020", title: "Real Estate Law Excellence", org: "Realty+ Conclave Awards", category: "Real Estate" },
 ];
 
 const rankings = [
-  { source: "Chambers USA", rank: "Band 1", area: "Corporate/M&A" },
-  { source: "The Legal 500", rank: "Top Tier", area: "Dispute Resolution" },
-  { source: "Super Lawyers", rank: "Top 10", area: "New York" },
-  { source: "U.S. News Best Lawyers", rank: "Tier 1", area: "7 Practice Areas" },
-  { source: "Martindale-Hubbell", rank: "AV Preeminent", area: "Firm Rating" },
-  { source: "Best Lawyers in America", rank: "40 Attorneys Listed", area: "Multiple Disciplines" },
+  { source: "Chambers & Partners Asia Pacific", rank: "Band 2", area: "Corporate/M&A" },
+  { source: "Legal 500 Asia Pacific", rank: "Leading Firm", area: "Dispute Resolution" },
+  { source: "India Business Law Journal", rank: "Top Firm", area: "Corporate & Commercial" },
+  { source: "BW Legal World", rank: "Top 20 Law Firms", area: "India Rankings" },
+  { source: "Benchmark Litigation Asia", rank: "Recommended Firm", area: "Litigation" },
+  { source: "Asialaw Profiles", rank: "Notable Firm", area: "Multiple Practice Areas" },
 ];
 
 export default function Awards() {

@@ -31,7 +31,9 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in">
           <div className="h-px w-12 bg-[#c9a84c]" />
           <span className="text-[#c9a84c] text-[10px] tracking-[0.5em] uppercase font-semibold">
-            Established 1985 · New Delhi
+            Established 1985 <br className="sm:hidden" />
+            <span className="hidden sm:inline"> · </span>
+            New Delhi
           </span>
           <div className="h-px w-12 bg-[#c9a84c]" />
         </div>
@@ -43,7 +45,9 @@ export default function Hero() {
         >
           Strategic Legal Excellence
           <br />
-          <em className="text-[#c9a84c] not-italic">Backed by 41 Years of Experience</em>
+          <em className="text-[#c9a84c] not-italic">
+            Backed by 41 Years of Experience
+          </em>
         </h1>
 
         {/* Subheading */}
@@ -51,7 +55,8 @@ export default function Hero() {
           className="text-white/60 text-sm md:text-base tracking-wide leading-relaxed max-w-2xl mx-auto mb-12 animate-fade-in-up"
           style={{ animationDelay: "0.25s", opacity: 0 }}
         >
-          Delivering high-impact legal solutions for individuals, startups, and enterprises.
+          Delivering high-impact legal solutions for individuals, startups, and
+          enterprises.
         </p>
 
         {/* CTA Buttons */}
@@ -92,7 +97,9 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-white/30 text-[9px] tracking-[0.3em] uppercase">Scroll</span>
+        <span className="text-white/30 text-[9px] tracking-[0.3em] uppercase">
+          Scroll
+        </span>
         <div className="w-px h-12 bg-gradient-to-b from-[#c9a84c]/50 to-transparent" />
       </div>
     </section>

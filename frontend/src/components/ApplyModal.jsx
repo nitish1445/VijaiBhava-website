@@ -83,7 +83,7 @@ export default function ApplyModal({ open, onClose, job }) {
           <div className="text-center py-10 flex flex-col items-center">
             {/* ICON */}
             <div className="w-16 h-16 flex items-center justify-center rounded-full mb-5">
-              <BsCheckCircle className="text-5xl text-[#c9a84c]" />
+              <BsCheckCircle className="text-5xl text-green-600" />
             </div>
 
             {/* TITLE */}

@@ -1,20 +1,14 @@
 import { useState } from "react";
 import { BsCheckCircle } from "react-icons/bs";
+import { services } from "../assets/serviceData";
 
 const offices = [
   {
     city: "New Delhi (HQ)",
     address: " C12/12 1st Floor MIG Flat Sec 03 ",
     state: "Rohini Delhi, 110085",
-    phone: "+91 1135783931",
+    phone: "+91 9818719962",
   },
-  {
-    city: "Rohini Delhi",
-    address: "C12/12 1st Floor MIG Flat Sec 03",
-    state: "Delhi, 110084",
-    phone: "+91 (310) 555-0200",
-  },
-  
 ];
 const mapQuery = encodeURIComponent(offices[0].address);
 
@@ -29,19 +23,145 @@ export default function Contact() {
     message: "",
     agree: false,
   });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  const namePattern = /^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/;
+  const phonePattern = /^[6-9]\d{9}$/;
+
+  const formatPhone = (value) => {
+    const cleaned = value.replace(/[\s().-]/g, "");
+
+    if (cleaned.startsWith("+91")) {
+      const digits = cleaned.slice(3).replace(/\D/g, "").slice(0, 10);
+      return `+91${digits}`;
+    }
+
+    const digits = cleaned.replace(/\D/g, "").slice(0, 10);
+    return digits;
+  };
+
+  const normalizePhone = (value) =>
+    value.replace(/[\s().-]/g, "").replace(/^\+91/, "");
+
+  const validate = (values) => {
+    const nextErrors = {};
+
+    if (!values.firstName.trim()) {
+      nextErrors.firstName = "Please enter your first name.";
+    } else if (!namePattern.test(values.firstName.trim())) {
+      nextErrors.firstName = "Please enter a valid first name.";
+    }
+
+    if (!values.lastName.trim()) {
+      nextErrors.lastName = "Please enter your last name.";
+    } else if (!namePattern.test(values.lastName.trim())) {
+      nextErrors.lastName = "Please enter a valid last name.";
+    }
+
+    if (!values.email.trim()) {
+      nextErrors.email = "Please enter your email address.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+      nextErrors.email = "Please enter a valid email address.";
+    }
+
+    const normalizedPhone = normalizePhone(values.phone.trim());
+
+    if (!values.phone.trim()) {
+      nextErrors.phone = "Please enter your phone number.";
+    } else if (!phonePattern.test(normalizedPhone)) {
+      nextErrors.phone = "Please enter a valid 10-digit Indian mobile number.";
+    }
+
+    if (!values.practiceArea) nextErrors.practiceArea = "Please select a practice area.";
+    if (!values.message.trim()) nextErrors.message = "Please share a brief message.";
+    if (!values.agree) nextErrors.agree = "Please confirm this notice to continue.";
+
+    return nextErrors;
+  };
+
+  const currentErrors = validate(formData);
+  const isFormValid = Object.keys(currentErrors).length === 0;
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    const nextValue = name === "phone" ? formatPhone(value) : value;
     setFormData((p) => ({
       ...p,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === "checkbox" ? checked : nextValue,
     }));
+
+    setErrors((p) => {
+      const next = { ...p };
+
+      if (name === "firstName" && value.trim()) delete next.firstName;
+      if (name === "lastName" && value.trim()) delete next.lastName;
+      if (name === "practiceArea" && value) delete next.practiceArea;
+      if (name === "message" && value.trim()) delete next.message;
+      if (name === "phone") {
+        const normalizedPhone = normalizePhone(nextValue.trim());
+
+        if (!nextValue.trim() || phonePattern.test(normalizedPhone)) delete next.phone;
+      }
+      if (name === "email") {
+        if (!value.trim()) {
+          next.email = "Please enter your email address.";
+        } else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          delete next.email;
+        }
+      }
+
+      return next;
+    });
+  };
+
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched((p) => ({ ...p, [name]: true }));
+    setErrors(validate(formData));
+  };
+
+  const handleClear = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      practiceArea: "",
+      message: "",
+      agree: false,
+    });
+    setErrors({});
+    setTouched({});
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    const nextErrors = validate(formData);
+    setErrors(nextErrors);
+    setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      phone: true,
+      company: true,
+      practiceArea: true,
+      message: true,
+      agree: true,
+    });
+
+    if (Object.keys(nextErrors).length > 0) return;
+
+    try {
+      //api call and backend connection
+      console.log(formData);
+      handleClear();
+      setSubmitted(true);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -80,7 +200,7 @@ export default function Contact() {
 
             {submitted ? (
               <div className="border border-[#c9a84c]/40 bg-[#faf8f3] p-10 text-center">
-                <div className="text-5xl text-[#c9a84c] mb-4 flex justify-center ">
+                <div className="text-5xl text-green-600 mb-4 flex justify-center ">
                   <BsCheckCircle />
                 </div>
                 <h3 className="font-serif text-2xl text-[#0a1628] mb-3">
@@ -98,7 +218,11 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form
+                onSubmit={handleSubmit}
+                onReset={handleClear}
+                className="space-y-8"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="text-[10px] tracking-widest uppercase text-slate-500 block mb-2">
@@ -108,10 +232,15 @@ export default function Contact() {
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleChange}
-                      className="input-field"
+                      onBlur={handleBlur}
+                      aria-invalid={Boolean(touched.firstName && errors.firstName)}
+                      className={`input-field ${touched.firstName && errors.firstName ? "border-red-500 focus:border-red-500" : ""}`}
                       placeholder="John"
                       required
                     />
+                    {touched.firstName && errors.firstName ? (
+                      <p className="mt-2 text-xs text-red-600">{errors.firstName}</p>
+                    ) : null}
                   </div>
                   <div>
                     <label className="text-[10px] tracking-widest uppercase text-slate-500 block mb-2">
@@ -121,10 +250,15 @@ export default function Contact() {
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleChange}
-                      className="input-field"
+                      onBlur={handleBlur}
+                      aria-invalid={Boolean(touched.lastName && errors.lastName)}
+                      className={`input-field ${touched.lastName && errors.lastName ? "border-red-500 focus:border-red-500" : ""}`}
                       placeholder="Doe"
                       required
                     />
+                    {touched.lastName && errors.lastName ? (
+                      <p className="mt-2 text-xs text-red-600">{errors.lastName}</p>
+                    ) : null}
                   </div>
                 </div>
 
@@ -138,10 +272,15 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="input-field"
+                      onBlur={handleBlur}
+                      aria-invalid={Boolean(touched.email && errors.email)}
+                      className={`input-field ${touched.email && errors.email ? "border-red-500 focus:border-red-500" : ""}`}
                       placeholder="john@example.com"
                       required
                     />
+                    {touched.email && errors.email ? (
+                      <p className="mt-2 text-xs text-red-600">{errors.email}</p>
+                    ) : null}
                   </div>
                   <div>
                     <label className="text-[10px] tracking-widest uppercase text-slate-500 block mb-2">
@@ -151,9 +290,15 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="input-field"
-                      placeholder="+91 9999 000-000"
+                      onBlur={handleBlur}
+                      aria-invalid={Boolean(touched.phone && errors.phone)}
+                      className={`input-field ${touched.phone && errors.phone ? "border-red-500 focus:border-red-500" : ""}`}
+                      placeholder="+91 999 900 0000"
+                      maxLength={13}
                     />
+                    {touched.phone && errors.phone ? (
+                      <p className="mt-2 text-xs text-red-600">{errors.phone}</p>
+                    ) : null}
                   </div>
                 </div>
 
@@ -178,26 +323,22 @@ export default function Contact() {
                     name="practiceArea"
                     value={formData.practiceArea}
                     onChange={handleChange}
-                    className="input-field bg-transparent cursor-pointer"
+                      onBlur={handleBlur}
+                      aria-invalid={Boolean(touched.practiceArea && errors.practiceArea)}
+                      className={`input-field bg-transparent cursor-pointer ${touched.practiceArea && errors.practiceArea ? "border-red-500 focus:border-red-500" : ""}`}
                     required
                   >
                     <option value="">Select a practice area...</option>
-                    {[
-                      "Corporate Law",
-                      "Litigation",
-                      "Real Estate",
-                      "Intellectual Property",
-                      "Employment Law",
-                      "Family Law",
-                      "Criminal Defense",
-                      "Tax Law",
-                      "Other",
-                    ].map((a) => (
-                      <option key={a} value={a}>
-                        {a}
+                    {services.map((s) => (
+                      <option key={s.slug} value={s.title}>
+                        {s.title}
                       </option>
                     ))}
+                    <option value="Other">Other</option>
                   </select>
+                    {touched.practiceArea && errors.practiceArea ? (
+                      <p className="mt-2 text-xs text-red-600">{errors.practiceArea}</p>
+                    ) : null}
                 </div>
 
                 <div>
@@ -208,11 +349,16 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     rows={5}
                     required
-                    className="input-field resize-none"
+                    aria-invalid={Boolean(touched.message && errors.message)}
+                    className={`input-field resize-none ${touched.message && errors.message ? "border-red-500 focus:border-red-500" : ""}`}
                     placeholder="Please briefly describe your legal situation and what you're seeking help with..."
                   />
+                  {touched.message && errors.message ? (
+                    <p className="mt-2 text-xs text-red-600">{errors.message}</p>
+                  ) : null}
                 </div>
 
                 <div className="flex gap-3 items-start">
@@ -222,6 +368,8 @@ export default function Contact() {
                     id="agree"
                     checked={formData.agree}
                     onChange={handleChange}
+                    onBlur={handleBlur}
+                    aria-invalid={Boolean(touched.agree && errors.agree)}
                     className="mt-1 accent-[#c9a84c]"
                     required
                   />
@@ -237,7 +385,8 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="btn-gold-solid w-full text-center"
+                  disabled={!isFormValid}
+                  className="btn-gold-solid w-full text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#c9a84c]"
                 >
                   Submit Consultation Request
                 </button>
@@ -279,7 +428,7 @@ export default function Contact() {
               <span className="section-label">Office Hours</span>
               <div className="space-y-2 mt-3">
                 {[
-                  { day: "Monday – Friday", hours: "8:00 AM – 6:00 PM" },
+                  { day: "Monday – Friday", hours: "9:00 AM – 6:00 PM" },
                   { day: "Saturday", hours: "By Appointment" },
                   { day: "Sunday", hours: "Closed" },
                   { day: "Emergency Matters", hours: "24 / 7" },
@@ -303,10 +452,10 @@ export default function Contact() {
                 For urgent legal matters requiring immediate assistance:
               </p>
               <a
-                href="tel:+911135783931"
+                href="tel:+91 7070054113"
                 className="font-serif text-2xl text-[#c9a84c] font-light"
               >
-                +91 1135783931
+                +91 7070054113
               </a>
               <p className="text-white/30 text-[10px] mt-1">Available 24/7</p>
             </div>

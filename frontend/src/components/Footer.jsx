@@ -173,7 +173,7 @@ export default function Footer() {
               <li className="flex items-start gap-3 group">
                 <FaClock className="text-[#c9a84c] mt-1 text-xs shrink-0" />
                 <span className="text-white/60 text-xs leading-relaxed">
-                  Mon to Fri : 8 : 00 am - 6 : 00 pm
+                  Mon to Fri : 9 : 00 am - 6 : 00 pm
                   <br />
                   <span className="text-white/40 text-[10px]">
                     Emergency: 24/7

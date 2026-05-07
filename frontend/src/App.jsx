@@ -15,6 +15,9 @@ import Insights from "./pages/Insights";
 import Career from "./pages/Career";
 import CareerDetail from "./pages/CareerDetail";
 import Contact from "./pages/Contact";
+import DataProtectionPage from "./pages/DataProtectionPage";
+import TermsConditions from "./pages/TermsConditions";
+import Disclaimer from "./pages/Disclaimer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -42,6 +45,9 @@ function AppLayout() {
         <Route path="/careers" element={<Career />} />
         <Route path="/careers/:slug" element={<CareerDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<DataProtectionPage />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
         <Route
           path="*"
           element={

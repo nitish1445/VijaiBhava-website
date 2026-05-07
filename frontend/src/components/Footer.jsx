@@ -195,16 +195,25 @@ export default function Footer() {
               reserved.
             </span>
           </p>
-          <div className="flex gap-4">
-            {["Privacy Policy", "Terms of Use", "Disclaimer"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+          <div className="flex flex-wrap gap-4 justify-center md:justify-end">
+            <Link
+              to="/privacy-policy"
+              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-and-conditions"
+              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
+            >
+              Terms & Conditions
+            </Link>
+            <Link
+              to="/disclaimer"
+              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
+            >
+              Disclaimer
+            </Link>
           </div>
         </div>
       </div>

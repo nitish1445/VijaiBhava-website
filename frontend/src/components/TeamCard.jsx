@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import maleAvatar from "../assets/maleLawyer.png";
-import femaleAvatar from "../assets/femaleLawyer.png";
 
 export default function TeamCard({ member }) {
-  const { id, name, title, specialty, image, bio, gender } = member;
+  const { id, name, title, specialty, image, bio } = member || {};
 
-  const avatar = image || (gender === "male" ? maleAvatar : gender === "female" ? femaleAvatar : null);
+  const avatar = image || null;
   const initials = name
-    .split(" ")
-    .map((n) => n[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
+    ? name
+        .split(" ")
+        .map((n) => n[0])
+        .slice(0, 2)
+        .join("")
+        .toUpperCase()
+    : "";
 
   return (
     <Link
@@ -42,7 +42,7 @@ export default function TeamCard({ member }) {
           <div className="text-[#c9a84c] text-[9px] tracking-[0.3em] uppercase mb-1">
             {specialty}
           </div>
-          <h3 className="text-white font-serif text-xl font-light">{name}</h3>
+          <h3 className="text-white font-serif text-xl font-light">Adv. {name}</h3>
         </div>
       </div>
 

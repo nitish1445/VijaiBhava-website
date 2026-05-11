@@ -1,22 +1,42 @@
 import { useState } from "react";
 import TeamCard from "../components/TeamCard";
 import { teamMembers } from "../assets/userData";
+import { services } from "../assets/serviceData";
 
-const specialties = ["All", "Corporate Law", "Litigation", "Real Estate", "IP Law", "Employment", "Family Law", "Criminal Defense", "Tax Law",];
+const specialties = ["All", ...services.map((service) => service.title)];
 
 export default function People() {
   const [filter, setFilter] = useState("All");
 
-  const filtered = filter === "All"
-    ? teamMembers
-    : teamMembers.filter((m) => m.specialty === filter);
+  const filtered =
+    filter === "All"
+      ? teamMembers
+      : (() => {
+          const selectedService = services.find((service) => service.title === filter);
+
+          if (selectedService) {
+            const serviceLawyerIds = new Set(
+              (selectedService.lawyers || []).map((lawyer) => lawyer.id),
+            );
+            return teamMembers.filter((member) => serviceLawyerIds.has(member.id));
+          }
+
+          return teamMembers.filter(
+            (member) =>
+              member.specialty === filter ||
+              (member.practiceAreas || []).includes(filter),
+          );
+        })();
 
   return (
     <main className="">
       {/* Header */}
       <section className="bg-[#0a1628] py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: `radial-gradient(circle at 80% 30%, #c9a84c 0%, transparent 60%)` }}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `radial-gradient(circle at 30% 50%, #c9a84c 0%, transparent 60%)`,
+          }}
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="section-label">Our Attorneys</span>
@@ -84,8 +104,8 @@ export default function People() {
               diversity in law.
             </p>
             <p className="text-white/60 text-sm leading-relaxed">
-              From our mentorship programs to our pro bono commitments, we invest
-              in our people and our communities with equal dedication.
+              From our mentorship programs to our pro bono commitments, we
+              invest in our people and our communities with equal dedication.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-5">
@@ -95,9 +115,16 @@ export default function People() {
               { label: "Pro Bono Hours (2023)", value: "12,400+" },
               { label: "Avg. Attorney Tenure", value: "11 yrs" },
             ].map((stat) => (
-              <div key={stat.label} className="border border-white/10 p-8 text-center hover:border-[#c9a84c]/40 transition-colors duration-300">
-                <div className="font-serif text-3xl text-[#c9a84c] font-light mb-2">{stat.value}</div>
-                <div className="text-white/50 text-[10px] tracking-widest uppercase">{stat.label}</div>
+              <div
+                key={stat.label}
+                className="border border-white/10 p-8 text-center hover:border-[#c9a84c]/40 transition-colors duration-300"
+              >
+                <div className="font-serif text-3xl text-[#c9a84c] font-light mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-white/50 text-[10px] tracking-widest uppercase">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>

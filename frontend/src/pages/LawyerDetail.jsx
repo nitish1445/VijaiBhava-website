@@ -1,18 +1,33 @@
 import { useParams, Link } from "react-router-dom";
 import { teamMembers } from "../assets/userData";
-import { FaEnvelope, FaLinkedin, FaIdCard } from "react-icons/fa";
-import maleAvatar from "../assets/maleLawyer.png";
-import femaleAvatar from "../assets/femaleLawyer.png";
+import { FaEnvelope, FaLinkedin} from "react-icons/fa";
+// images are provided per-team-member in `userData`
 
 const actions = [
   { label: "Email", icon: FaEnvelope },
   { label: "LinkedIn", icon: FaLinkedin },
-  { label: "vCard", icon: FaIdCard },
 ];
 
 export default function LawyerDetail() {
   const { id } = useParams();
   const lawyer = teamMembers.find((m) => m.id === id);
+  const email = lawyer?.email || `${lawyer?.name?.toLowerCase().replace(/\s+/g, ".")}@vijaibhavalawfirm.com`;
+  const education = lawyer?.education ?? [
+    {
+      institution: "National Law University, Delhi",
+      degree: "B.A. LL.B. (Hons.)",
+    },
+    {
+      institution: "University of Delhi",
+      degree: "LL.M. (Corporate Law)",
+    },
+  ];
+  const barAdmissions = lawyer?.barAdmissions ?? [
+    "Bar Council of Delhi",
+    "Delhi High Court",
+    "Supreme Court of India",
+    "NCLT",
+  ];
 
   if (!lawyer) {
     return (
@@ -49,13 +64,7 @@ export default function LawyerDetail() {
           <div className="flex flex-col md:flex-row gap-10 items-start">
             {/* Avatar */}
             {(() => {
-              const avatar =
-                lawyer.image ||
-                (lawyer.gender === "male"
-                  ? maleAvatar
-                  : lawyer.gender === "female"
-                    ? femaleAvatar
-                    : null);
+              const avatar = lawyer.image || null;
 
               const initials = lawyer.name
                 .split(" ")
@@ -86,7 +95,7 @@ export default function LawyerDetail() {
               </span>
 
               <h1 className="font-serif text-4xl md:text-5xl text-white font-light mt-2 mb-2">
-                {lawyer.name}
+                Adv. {lawyer.name}
               </h1>
 
               <p className="text-white/50 text-sm">{lawyer.title}</p>
@@ -94,14 +103,18 @@ export default function LawyerDetail() {
               <div className="flex gap-3 mt-5 flex-wrap">
                 {actions.map((btn) => {
                   const Icon = btn.icon;
+                  const isEmail = btn.label === "Email";
                   return (
-                    <button
+                    <a
+                      href={isEmail ? `mailto:${email}` : "https://www.linkedin.com"}
                       key={btn.label}
                       className="btn-gold text-[10px] py-2 px-4 flex items-center gap-2"
+                      target={isEmail ? undefined : "_blank"}
+                      rel={isEmail ? undefined : "noreferrer"}
                     >
                       <Icon className="text-[12px]" />
                       {btn.label}
-                    </button>
+                    </a>
                   );
                 })}
               </div>
@@ -164,12 +177,7 @@ export default function LawyerDetail() {
             <div className="bg-[#faf8f3] p-7 border">
               <span className="section-label">Practice Areas</span>
               <ul className="mt-3 space-y-2 text-sm">
-                {[
-                  lawyer.specialty,
-                  "Civil Litigation",
-                  "Corporate Law",
-                  "Regulatory Compliance",
-                ].map((area) => (
+                {(lawyer.practiceAreas || [lawyer.specialty]).map((area) => (
                   <li key={area}>• {area}</li>
                 ))}
               </ul>
@@ -179,20 +187,13 @@ export default function LawyerDetail() {
             <div className="bg-[#faf8f3] p-7 border">
               <span className="section-label">Education</span>
               <ul className="mt-3 space-y-3">
-                <li>
-                  National Law University, Delhi
-                  <br />
-                  <span className="text-xs text-slate-500">
-                    B.A. LL.B. (Hons.)
-                  </span>
-                </li>
-                <li>
-                  University of Delhi
-                  <br />
-                  <span className="text-xs text-slate-500">
-                    LL.M. (Corporate Law)
-                  </span>
-                </li>
+                {education.map((item) => (
+                  <li key={`${item.institution}-${item.degree}`}>
+                    {item.institution}
+                    <br />
+                    <span className="text-xs text-slate-500">{item.degree}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -200,10 +201,9 @@ export default function LawyerDetail() {
             <div className="bg-[#faf8f3] p-7 border">
               <span className="section-label">Bar Admissions</span>
               <ul className="mt-3 space-y-2 text-sm">
-                <li>Bar Council of Delhi</li>
-                <li>Delhi High Court</li>
-                <li>Supreme Court of India</li>
-                <li>NCLT</li>
+                {barAdmissions.map((bar) => (
+                  <li key={bar}>{bar}</li>
+                ))}
               </ul>
             </div>
 
@@ -225,3 +225,6 @@ export default function LawyerDetail() {
     </main>
   );
 }
+
+
+

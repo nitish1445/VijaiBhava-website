@@ -47,9 +47,8 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "william-harrington" },
-      { id: "priya-nair" },
-      { id: "elena-vasquez" },
+      { id: "manish-sharma" },
+      { id: "gaurav-gulati" },
     ],
     relatedServices: ["litigation", "intellectual-property", "tax-law"],
     caseTypes: [
@@ -118,9 +117,9 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "marcus-thompson" },
-      { id: "james-whitfield" },
-      { id: "robert-cunningham" },
+      { id: "rs-sharma" },
+      { id: "khusbu-kumari" },
+      { id: "avinash-singh" },
     ],
     relatedServices: ["corporate-law", "white-collar-crime", "adr"],
     caseTypes: [
@@ -188,9 +187,7 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "olivia-park" },
-      { id: "sarah-chen" },
-      { id: "priya-nair" },
+      { id: "jyoti-sharma" },
     ],
     relatedServices: ["adr", "tax-law", "real-estate"],
     caseTypes: [
@@ -266,9 +263,8 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "marcus-thompson" },
-      { id: "william-harrington" },
-      { id: "robert-cunningham" },
+      { id: "avinash-singh" },
+      { id: "rs-sharma" },
     ],
     relatedServices: ["litigation", "corporate-law", "employment-law"],
     caseTypes: [
@@ -338,9 +334,7 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "sarah-chen" },
-      { id: "william-harrington" },
-      { id: "elena-vasquez" },
+      { id: "vicky-kumar-maurya" },
     ],
     relatedServices: ["corporate-law", "cyber-law", "litigation"],
     caseTypes: [
@@ -415,9 +409,8 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "james-whitfield" },
-      { id: "marcus-thompson" },
-      { id: "william-harrington" },
+      { id: "khusbu-kumari" },
+      { id: "rs-sharma" },
     ],
     relatedServices: ["litigation", "corporate-law", "cyber-law"],
     caseTypes: [
@@ -484,9 +477,7 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "sarah-chen" },
-      { id: "priya-nair" },
-      { id: "robert-cunningham" },
+      { id: "vicky-kumar-maurya" },
     ],
     relatedServices: [
       "intellectual-property",
@@ -556,9 +547,9 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "elena-vasquez" },
-      { id: "william-harrington" },
-      { id: "marcus-thompson" },
+      { id: "manish-sharma" },
+      { id: "gaurav-gulati" },
+      { id: "rs-sharma" },
     ],
     relatedServices: ["litigation", "corporate-law", "adr"],
     caseTypes: [

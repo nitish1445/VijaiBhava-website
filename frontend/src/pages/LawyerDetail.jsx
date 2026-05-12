@@ -132,21 +132,11 @@ export default function LawyerDetail() {
             <div>
               <span className="section-label">Biography</span>
 
-              <p className="text-slate-600 text-sm mt-3">{lawyer.bio}</p>
-
-              <p className="text-slate-600 text-sm mt-4">
-                {lawyer.name} has represented clients in complex legal matters
-                across various courts and tribunals in India. Known for
-                strategic thinking and meticulous preparation,{" "}
-                {lawyer.name.split(" ")[0]} delivers practical and result-driven
-                legal solutions.
-              </p>
-
-              <p className="text-slate-600 text-sm mt-4">
-                Prior to joining Vijai Bhava Law Firm,{" "}
-                {lawyer.name.split(" ")[0]} worked with reputed law firms and
-                has appeared before High Courts and the Supreme Court of India.
-              </p>
+              {(lawyer.bio || "").split(/\n\s*\n/).filter(Boolean).map((para, i) => (
+                <p key={i} className="text-slate-600 text-sm mt-3">
+                  {para}
+                </p>
+              ))}
             </div>
 
             {/* Matters */}
@@ -154,12 +144,7 @@ export default function LawyerDetail() {
               <span className="section-label">Notable Matters</span>
 
               <div className="border mt-4">
-                {[
-                  "Represented client in high-value commercial dispute before Delhi High Court.",
-                  "Advised on multi-crore real estate transaction ensuring compliance.",
-                  "Handled complex criminal litigation with favorable outcome.",
-                  "Advised startups on funding agreements and legal structuring.",
-                ].map((m, i) => (
+                {(lawyer.notableMatters || []).map((m, i) => (
                   <div key={i} className="p-5 border-b flex gap-4">
                     <span className="text-[#c9a84c]">
                       {String(i + 1).padStart(2, "0")}

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const articles = [
   {
     id: 1,
@@ -91,26 +89,9 @@ const articles = [
   },
 ];
 
-const categories = [
-  "All",
-  "Corporate Law",
-  "Intellectual Property",
-  "Employment Law",
-  "Real Estate",
-  "Criminal Defense",
-  "Tax Law",
-  "Litigation",
-  "Family Law",
-];
-
 export default function Insights() {
-  const [activeCategory, setActiveCategory] = useState("All");
   const featured = articles.find((a) => a.featured);
   const rest = articles.filter((a) => !a.featured);
-  const filtered =
-    activeCategory === "All"
-      ? rest
-      : rest.filter((a) => a.category === activeCategory);
 
   return (
     <main className="">
@@ -175,22 +156,19 @@ export default function Insights() {
         </section>
       )}
 
-      {/* Category Filter */}
-      <section className="bg-[#faf8f3] border-b border-slate-200 sticky top-[60px] z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-2">
-          {categories.map((c) => (
-            <button
-              key={c}
-              onClick={() => setActiveCategory(c)}
-              className={`px-4 py-1.5 text-[10px] tracking-widest uppercase font-semibold transition-all duration-200 whitespace-nowrap ${
-                activeCategory === c
-                  ? "bg-[#0a1628] text-[#c9a84c]"
-                  : "bg-white text-slate-500 border border-slate-200 hover:border-[#c9a84c]/40 hover:text-[#c9a84c]"
-              }`}
-            >
-              {c}
-            </button>
-          ))}
+      <section className="border-y border-slate-100 bg-[#faf8f3] py-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 items-center">
+          <div>
+            <span className="section-label">Editorial Coverage</span>
+            <h2 className="section-title text-3xl md:text-4xl max-w-xl">
+              Latest commentary across the firm’s core practice areas.
+            </h2>
+          </div>
+          <p className="text-sm md:text-base leading-relaxed text-slate-600 max-w-2xl">
+            A curated stream of analysis, alerts, and practical guidance from
+            our attorneys. The featured piece is highlighted first, followed by
+            the rest of our latest writing in one continuous read.
+          </p>
         </div>
       </section>
 
@@ -198,7 +176,7 @@ export default function Insights() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((article) => (
+            {rest.map((article) => (
               <article
                 key={article.id}
                 className="group border border-slate-100 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -233,7 +211,7 @@ export default function Insights() {
             ))}
           </div>
 
-          {filtered.length === 0 && (
+          {rest.length === 0 && (
             <div className="text-center py-20 text-slate-400 text-sm">
               No articles found in this category.
             </div>

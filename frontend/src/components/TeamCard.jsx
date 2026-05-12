@@ -52,7 +52,7 @@ export default function TeamCard({ member }) {
           {title}
         </p>
         {bio && (
-          <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
+          <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
             {bio}
           </p>
         )}

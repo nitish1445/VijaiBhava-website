@@ -7,7 +7,7 @@ const offices = [
     city: "New Delhi (HQ)",
     address: " C12/12 1st Floor MIG Flat Sec 03 ",
     state: "Rohini Delhi, 110085",
-    phone: "+91 9818719962",
+    phone: "+91 1135783931",
   },
 ];
 const mapQuery = encodeURIComponent(offices[0].address);

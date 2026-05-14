@@ -1,13 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
 import jobs from "../assets/careerData";
-import ApplyModal from "../components/ApplyModal";
 import Logo from "../assets/Logo.png";
 
 export default function CareerDetail() {
   const { slug } = useParams();
   const job = jobs.find((j) => j.slug === slug);
-  const [open, setOpen] = useState(false);
 
   if (!job) {
     return (
@@ -62,12 +59,12 @@ export default function CareerDetail() {
 
             {/* RIGHT BUTTON */}
             <div className="flex md:items-start">
-              <button
-                onClick={() => setOpen(true)}
+              <Link
+                to={`/careers/${job.slug}/apply`}
                 className="btn-gold-solid md:w-auto text-center"
               >
                 Apply Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -159,12 +156,12 @@ export default function CareerDetail() {
               </div>
             </div>
 
-            <button
-              onClick={() => setOpen(true)}
-              className="btn-gold-solid w-full"
+            <Link
+              to={`/careers/${job.slug}/apply`}
+              className="btn-gold-solid w-full text-center block"
             >
               Apply Now
-            </button>
+            </Link>
           </aside>
         </div>
       </section>
@@ -178,13 +175,14 @@ export default function CareerDetail() {
             Click apply to start your application — we review submissions on a
             rolling basis.
           </p>
-          <button onClick={() => setOpen(true)} className="btn-white-outline">
+          <Link
+            to={`/careers/${job.slug}/apply`}
+            className="btn-white-outline inline-block"
+          >
             Apply Now
-          </button>
+          </Link>
         </div>
       </section>
-
-      <ApplyModal open={open} onClose={() => setOpen(false)} job={job} />
     </main>
   );
 }

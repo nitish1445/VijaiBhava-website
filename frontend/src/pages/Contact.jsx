@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { services } from "../assets/serviceData";
+import api from "../config/Api";
+import toast from "react-hot-toast";
 
 const offices = [
   {
@@ -26,6 +28,7 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const namePattern = /^[A-Za-z]+(?:[ '-][A-Za-z]+)*$/;
   const phonePattern = /^[6-9]\d{9}$/;
@@ -74,9 +77,12 @@ export default function Contact() {
       nextErrors.phone = "Please enter a valid 10-digit Indian mobile number.";
     }
 
-    if (!values.practiceArea) nextErrors.practiceArea = "Please select a practice area.";
-    if (!values.message.trim()) nextErrors.message = "Please share a brief message.";
-    if (!values.agree) nextErrors.agree = "Please confirm this notice to continue.";
+    if (!values.practiceArea)
+      nextErrors.practiceArea = "Please select a practice area.";
+    if (!values.message.trim())
+      nextErrors.message = "Please share a brief message.";
+    if (!values.agree)
+      nextErrors.agree = "Please confirm this notice to continue.";
 
     return nextErrors;
   };
@@ -99,10 +105,12 @@ export default function Contact() {
       if (name === "lastName" && value.trim()) delete next.lastName;
       if (name === "practiceArea" && value) delete next.practiceArea;
       if (name === "message" && value.trim()) delete next.message;
+      if (name === "agree" && checked) delete next.agree;
       if (name === "phone") {
         const normalizedPhone = normalizePhone(nextValue.trim());
 
-        if (!nextValue.trim() || phonePattern.test(normalizedPhone)) delete next.phone;
+        if (!nextValue.trim() || phonePattern.test(normalizedPhone))
+          delete next.phone;
       }
       if (name === "email") {
         if (!value.trim()) {
@@ -135,10 +143,13 @@ export default function Contact() {
     });
     setErrors({});
     setTouched({});
+    setSubmitted(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const nextErrors = validate(formData);
     setErrors(nextErrors);
     setTouched({
@@ -154,13 +165,30 @@ export default function Contact() {
 
     if (Object.keys(nextErrors).length > 0) return;
 
+    setIsSubmitting(true);
+
     try {
-      //api call and backend connection
-      console.log(formData);
+      const cleanedData = {
+        ...formData,
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        email: formData.email.trim(),
+        phone: normalizePhone(formData.phone.trim()),
+        company: formData.company.trim(),
+        practiceArea: formData.practiceArea.trim(),
+        message: formData.message.trim(),
+      };
+      await api.post("/contact/message", cleanedData);
+      toast.success("Message sent successfully.");
       handleClear();
       setSubmitted(true);
     } catch (error) {
-      console.log(error);
+      const errorMessage =
+        error?.response?.data?.message ||
+        "Unable to send your message right now. Please try again.";
+      toast.error(errorMessage);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -222,6 +250,7 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 onReset={handleClear}
                 className="space-y-8"
+                noValidate
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
@@ -233,13 +262,17 @@ export default function Contact() {
                       value={formData.firstName}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      aria-invalid={Boolean(touched.firstName && errors.firstName)}
+                      aria-invalid={Boolean(
+                        touched.firstName && errors.firstName,
+                      )}
                       className={`input-field ${touched.firstName && errors.firstName ? "border-red-500 focus:border-red-500" : ""}`}
                       placeholder="John"
                       required
                     />
                     {touched.firstName && errors.firstName ? (
-                      <p className="mt-2 text-xs text-red-600">{errors.firstName}</p>
+                      <p className="mt-2 text-xs text-red-600">
+                        {errors.firstName}
+                      </p>
                     ) : null}
                   </div>
                   <div>
@@ -251,13 +284,17 @@ export default function Contact() {
                       value={formData.lastName}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      aria-invalid={Boolean(touched.lastName && errors.lastName)}
+                      aria-invalid={Boolean(
+                        touched.lastName && errors.lastName,
+                      )}
                       className={`input-field ${touched.lastName && errors.lastName ? "border-red-500 focus:border-red-500" : ""}`}
                       placeholder="Doe"
                       required
                     />
                     {touched.lastName && errors.lastName ? (
-                      <p className="mt-2 text-xs text-red-600">{errors.lastName}</p>
+                      <p className="mt-2 text-xs text-red-600">
+                        {errors.lastName}
+                      </p>
                     ) : null}
                   </div>
                 </div>
@@ -279,7 +316,9 @@ export default function Contact() {
                       required
                     />
                     {touched.email && errors.email ? (
-                      <p className="mt-2 text-xs text-red-600">{errors.email}</p>
+                      <p className="mt-2 text-xs text-red-600">
+                        {errors.email}
+                      </p>
                     ) : null}
                   </div>
                   <div>
@@ -297,7 +336,9 @@ export default function Contact() {
                       maxLength={13}
                     />
                     {touched.phone && errors.phone ? (
-                      <p className="mt-2 text-xs text-red-600">{errors.phone}</p>
+                      <p className="mt-2 text-xs text-red-600">
+                        {errors.phone}
+                      </p>
                     ) : null}
                   </div>
                 </div>
@@ -323,9 +364,11 @@ export default function Contact() {
                     name="practiceArea"
                     value={formData.practiceArea}
                     onChange={handleChange}
-                      onBlur={handleBlur}
-                      aria-invalid={Boolean(touched.practiceArea && errors.practiceArea)}
-                      className={`input-field bg-transparent cursor-pointer ${touched.practiceArea && errors.practiceArea ? "border-red-500 focus:border-red-500" : ""}`}
+                    onBlur={handleBlur}
+                    aria-invalid={Boolean(
+                      touched.practiceArea && errors.practiceArea,
+                    )}
+                    className={`input-field bg-transparent cursor-pointer ${touched.practiceArea && errors.practiceArea ? "border-red-500 focus:border-red-500" : ""}`}
                     required
                   >
                     <option value="">Select a practice area...</option>
@@ -336,9 +379,11 @@ export default function Contact() {
                     ))}
                     <option value="Other">Other</option>
                   </select>
-                    {touched.practiceArea && errors.practiceArea ? (
-                      <p className="mt-2 text-xs text-red-600">{errors.practiceArea}</p>
-                    ) : null}
+                  {touched.practiceArea && errors.practiceArea ? (
+                    <p className="mt-2 text-xs text-red-600">
+                      {errors.practiceArea}
+                    </p>
+                  ) : null}
                 </div>
 
                 <div>
@@ -357,7 +402,9 @@ export default function Contact() {
                     placeholder="Please briefly describe your legal situation and what you're seeking help with..."
                   />
                   {touched.message && errors.message ? (
-                    <p className="mt-2 text-xs text-red-600">{errors.message}</p>
+                    <p className="mt-2 text-xs text-red-600">
+                      {errors.message}
+                    </p>
                   ) : null}
                 </div>
 
@@ -383,12 +430,19 @@ export default function Contact() {
                   </label>
                 </div>
 
+                {Object.keys(errors).length > 0 &&
+                Object.keys(touched).length > 0 ? (
+                  <p className="text-xs text-red-600 leading-relaxed">
+                    Please fix the highlighted fields before submitting.
+                  </p>
+                ) : null}
+
                 <button
                   type="submit"
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || isSubmitting}
                   className="btn-gold-solid w-full text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#c9a84c]"
                 >
-                  Submit Consultation Request
+                  {isSubmitting ? "Submitting..." : "Submit Consultation Request"}
                 </button>
               </form>
             )}
@@ -463,9 +517,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-10 md:py-14 bg-[#1a2f5a]">
+      <section className="relative py-10 md:py-14 bg-[#1a2f5a]">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
             backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,0.1) 40px, rgba(201,168,76,0.1) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,0.1) 40px, rgba(201,168,76,0.1) 41px)`,
           }}

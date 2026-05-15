@@ -37,7 +37,7 @@ function AppLayout() {
     <>
       <ScrollToTop />
       <DisclaimerModal />
-      <Toaster position="top-right" />
+      <Toaster position="bottom-right" />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

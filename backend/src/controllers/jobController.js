@@ -5,7 +5,8 @@ export const submitApplication = async (req, res, next) => {
   try {
     const file = req.file;
 
-    const { firstName, lastName, email, phone, experience, coverLetter } = req.body;
+    const { firstName, lastName, email, phone, experience, coverLetter } =
+      req.body;
 
     if (!firstName || !lastName || !email || !phone || !experience) {
       return res.status(400).json({ message: "Missing required fields" });
@@ -29,17 +30,7 @@ export const submitApplication = async (req, res, next) => {
 
     const saved = await newApplication.save();
 
-    res.status(201).json({
-      id: saved._id,
-      name: saved.name,
-      email: saved.email,
-      phone: saved.phone,
-      experience: saved.experience,
-      coverLetter: saved.coverLetter,
-      resumeUrl: `/uploads/${saved.resume}`,
-      createdAt: saved.createdAt,
-    });
-
+    res.status(201).json(newApplication);
   } catch (error) {
     next(error);
   }

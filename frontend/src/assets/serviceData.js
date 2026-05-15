@@ -19,6 +19,7 @@ export const services = [
       "Advising boards, founders, and investors on the full spectrum of corporate matters with precision and discretion.",
     longDescription:
       "Our corporate law practice supports businesses through the entire lifecycle of growth. From entity formation and shareholder governance to acquisitions, fundraising, and restructuring, we provide practical legal guidance that aligns with commercial objectives. We work closely with leadership teams to manage risk, negotiate complex transactions, and build durable structures for long-term success.",
+    practiceAreas: ["Corporate Law"],
     features: [
       {
         title: "Mergers & Acquisitions",
@@ -48,7 +49,6 @@ export const services = [
     ],
     lawyers: [
       { id: "manish-sharma" },
-      { id: "gaurav-gulati" },
     ],
     relatedServices: ["litigation", "intellectual-property", "tax-law"],
     caseTypes: [
@@ -90,6 +90,7 @@ export const services = [
       "Representing clients in high-stakes disputes with a trial-ready strategy and commercial focus.",
     longDescription:
       "Our litigation team handles matters that demand strategic thinking, technical command, and courtroom discipline. We advise on commercial disputes, injunctions, regulatory investigations, and arbitration proceedings. Whether the objective is a negotiated settlement or a hard-fought trial, we prepare each case to create leverage and protect client interests at every stage.",
+    practiceAreas: ["Litigation", "Civil Disputes", "Commercial Disputes", "Alternative Dispute Resolution"],
     features: [
       {
         title: "Commercial Litigation",
@@ -118,8 +119,7 @@ export const services = [
     ],
     lawyers: [
       { id: "rs-sharma" },
-      { id: "khusbu-kumari" },
-      { id: "avinash-singh" },
+      { id: "pratham-verma" },
     ],
     relatedServices: ["corporate-law", "white-collar-crime", "adr"],
     caseTypes: [
@@ -161,6 +161,7 @@ export const services = [
       "Sensitive, strategic representation across divorce, custody, support, and family transitions.",
     longDescription:
       "Family disputes require both legal rigor and measured judgment. We guide clients through divorce, custody, support, asset division, adoption, and protection matters with confidentiality and care. Our goal is to secure practical outcomes that preserve dignity, protect children, and create a stable path forward.",
+    practiceAreas: ["Matrimonial Law", "Family Disputes", "Child Custody", "Settlement Negotiation"],
     features: [
       {
         title: "Divorce & Separation",
@@ -188,6 +189,7 @@ export const services = [
     ],
     lawyers: [
       { id: "jyoti-sharma" },
+      { id: "khusbu-kumari" },
     ],
     relatedServices: ["adr", "tax-law", "real-estate"],
     caseTypes: [
@@ -236,6 +238,7 @@ export const services = [
       "Efficient dispute resolution through arbitration, mediation, conciliation, and negotiation.",
     longDescription:
       "Alternative dispute resolution offers a faster, more private route to resolving conflict. We represent clients in mediation and arbitration with a focus on preserving value, reducing delay, and maintaining business relationships where possible. Our team structures each process with the same preparation and advocacy discipline used in court.",
+    practiceAreas: ["Arbitration", "Alternative Dispute Resolution", "Dispute Resolution"],
     features: [
       {
         title: "Arbitration",
@@ -265,6 +268,7 @@ export const services = [
     lawyers: [
       { id: "avinash-singh" },
       { id: "rs-sharma" },
+      { id: "pratham-verma" },
     ],
     relatedServices: ["litigation", "corporate-law", "employment-law"],
     caseTypes: [
@@ -306,6 +310,7 @@ export const services = [
       "Protecting inventions, brands, creative assets, and trade secrets across every stage of growth.",
     longDescription:
       "Innovation only creates value when it is protected. Our intellectual property practice helps clients secure, manage, and enforce patents, trademarks, copyrights, and confidential information. We combine legal strategy with commercial awareness to protect the assets that define a brand, product, or platform.",
+    practiceAreas: ["Intellectual Property Rights", "Cyber Law"],
     features: [
       {
         title: "Patents",
@@ -380,9 +385,10 @@ export const services = [
     icon: FaShieldAlt,
     title: "White-Collar Crime",
     description:
-      "Strategic defense and pre-emptive advisory in complex economic offence matters.",
+      "Strategic defense and pre-emptive advisory in complex economic offence frameworks.",
     longDescription:
       "We defend executives, founders, and companies facing scrutiny under fraud, corruption, financial misconduct, and related economic offence frameworks. Our approach is discreet, fast-moving, and evidence-driven. We work to limit exposure early, manage investigations intelligently, and mount a disciplined defense if formal proceedings follow.",
+    practiceAreas: ["White-Collar Crime", "Fraud", "Regulatory Matters"],
     features: [
       {
         title: "Fraud Investigations",
@@ -409,8 +415,7 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "khusbu-kumari" },
-      { id: "rs-sharma" },
+      { id: "manish-sharma" },
     ],
     relatedServices: ["litigation", "corporate-law", "cyber-law"],
     caseTypes: [
@@ -452,6 +457,7 @@ export const services = [
       "Counsel on privacy, cybercrime, platform governance, and digital compliance.",
     longDescription:
       "Digital businesses operate in a fast-changing risk environment. Our cyber law and data protection team helps clients manage privacy requirements, incident response, cybercrime allegations, intermediary issues, and data governance. We build practical compliance frameworks that support innovation without losing control of legal exposure.",
+    practiceAreas: ["Cyber Law", "Data Protection"],
     features: [
       {
         title: "Data Privacy",
@@ -478,6 +484,7 @@ export const services = [
     ],
     lawyers: [
       { id: "vicky-kumar-maurya" },
+      { id: "pratham-verma" },
     ],
     relatedServices: [
       "intellectual-property",
@@ -523,6 +530,7 @@ export const services = [
       "Legal support for aircraft, shipping, logistics, and cross-border transport matters.",
     longDescription:
       "Our aviation and maritime practice advises clients on transactions, regulatory compliance, disputes, and operational risk across highly regulated transport sectors. We handle ship arrests, cargo claims, aircraft leasing, insurance, and safety-related matters with speed and precision because these industries often cannot wait for slow legal answers.",
+    practiceAreas: ["Aviation Law", "Employment Law", "Service Matters"],
     features: [
       {
         title: "Aircraft Leasing",
@@ -548,8 +556,7 @@ export const services = [
     ],
     lawyers: [
       { id: "manish-sharma" },
-      { id: "gaurav-gulati" },
-      { id: "rs-sharma" },
+      { id: "avinash-singh" },
     ],
     relatedServices: ["litigation", "corporate-law", "adr"],
     caseTypes: [

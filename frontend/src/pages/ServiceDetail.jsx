@@ -50,19 +50,44 @@ export default function ServiceDetail() {
     );
   }
 
-  const lawyerCards = service.lawyers.map((lawyer) => {
-    const member = teamMembers.find((m) => m.id === lawyer.id);
-
-    return {
+  // Filter lawyers to only those whose practiceAreas match the service's practiceAreas
+  const lawyerCards = (service.lawyers || [])
+    .map((lawyer) => {
+      const member = teamMembers.find((m) => m.id === lawyer.id);
+      return { lawyer, member };
+    })
+    .filter(({ member }) => {
+      if (!member) return false;
+      
+      // Check if lawyer's practiceAreas have any overlap with service's practiceAreas
+      const lawyerPracticeAreas = member.practiceAreas || [];
+      const servicePracticeAreas = service.practiceAreas || [];
+      
+        // Check if lawyer's practice areas match service practice areas
+        const lawyerAreas = (member.practiceAreas || []).map(a => a.toLowerCase().trim());
+        const serviceAreas = (service.practiceAreas || []).map(a => a.toLowerCase().trim());
+      
+        // At least one practice area must have a match
+        return lawyerAreas.some((lawyerArea) =>
+          serviceAreas.some((serviceArea) => {
+            // Exact match
+            if (lawyerArea === serviceArea) return true;
+            // Partial match - if one contains the other or they share main keywords
+            if (lawyerArea.includes(serviceArea) || serviceArea.includes(lawyerArea)) return true;
+            return false;
+          })
+        );
+    })
+    .map(({ lawyer, member }) => ({
       id: lawyer.id,
-      name: lawyer.name || member?.name,
-      title: lawyer.role || member?.title,
-      specialty: service.title,
-      image: member?.image ?? lawyer.image ?? null,
-      bio: member?.bio ?? lawyer.bio ?? null,
-      gender: member?.gender ?? null,
-    };
-  });
+      name: member.name,
+      title: member.title,
+      specialty: member.specialty,
+      practiceAreas: member.practiceAreas,
+      image: member.image ?? null,
+      bio: member.bio ?? null,
+      gender: member.gender ?? null,
+    }));
 
   const relatedServices = (service.relatedServices || [])
     .map((relatedSlug) => services.find((item) => item.slug === relatedSlug))

@@ -8,6 +8,7 @@ const jobApplicationSchema = new mongoose.Schema(
     phone: { type: String, required: true },
     experience: { type: String, required: true },
     coverLetter: { type: String },
+    
     // store resume filename (accessible via /uploads/<filename>)
     resume: { type: String, required: true },
   },

@@ -185,8 +185,18 @@ export default function Contact() {
     } catch (error) {
       const errorMessage =
         error?.response?.data?.message ||
-        "Unable to send your message right now. Please try again.";
-      toast.error(errorMessage);
+        "Unable to send your message.\n Please try again.";
+      toast.error(errorMessage, {
+        style: {
+          border: "1px solid #713200",
+          padding: "16px",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#713200",
+          secondary: "#FFFAEE",
+        },
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -442,7 +452,9 @@ export default function Contact() {
                   disabled={!isFormValid || isSubmitting}
                   className="btn-gold-solid w-full text-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#c9a84c]"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Consultation Request"}
+                  {isSubmitting
+                    ? "Submitting..."
+                    : "Submit Consultation Request"}
                 </button>
               </form>
             )}

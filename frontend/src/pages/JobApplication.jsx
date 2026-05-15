@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import { BsCheckCircle } from "react-icons/bs";
 import jobs from "../assets/careerData";
 import api from "../config/Api";
+import toast from "react-hot-toast";
 
 export default function JobApplication() {
   const { slug } = useParams();
@@ -206,15 +207,13 @@ export default function JobApplication() {
         },
       });
 
-      console.log(res.data);
+      toast.success("Application Submitted.");
 
       setSubmitted(true);
-
       resetForm();
     } catch (error) {
-      console.log(error);
 
-      console.log(error.response?.data);
+      toast.error(error.response?.data ||"Something went wrong");
 
       setErrors((prev) => ({
         ...prev,

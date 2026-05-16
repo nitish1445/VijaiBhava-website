@@ -58,25 +58,33 @@ export default function ServiceDetail() {
     })
     .filter(({ member }) => {
       if (!member) return false;
-      
+
       // Check if lawyer's practiceAreas have any overlap with service's practiceAreas
       const lawyerPracticeAreas = member.practiceAreas || [];
       const servicePracticeAreas = service.practiceAreas || [];
-      
-        // Check if lawyer's practice areas match service practice areas
-        const lawyerAreas = (member.practiceAreas || []).map(a => a.toLowerCase().trim());
-        const serviceAreas = (service.practiceAreas || []).map(a => a.toLowerCase().trim());
-      
-        // At least one practice area must have a match
-        return lawyerAreas.some((lawyerArea) =>
-          serviceAreas.some((serviceArea) => {
-            // Exact match
-            if (lawyerArea === serviceArea) return true;
-            // Partial match - if one contains the other or they share main keywords
-            if (lawyerArea.includes(serviceArea) || serviceArea.includes(lawyerArea)) return true;
-            return false;
-          })
-        );
+
+      // Check if lawyer's practice areas match service practice areas
+      const lawyerAreas = (member.practiceAreas || []).map((a) =>
+        a.toLowerCase().trim(),
+      );
+      const serviceAreas = (service.practiceAreas || []).map((a) =>
+        a.toLowerCase().trim(),
+      );
+
+      // At least one practice area must have a match
+      return lawyerAreas.some((lawyerArea) =>
+        serviceAreas.some((serviceArea) => {
+          // Exact match
+          if (lawyerArea === serviceArea) return true;
+          // Partial match - if one contains the other or they share main keywords
+          if (
+            lawyerArea.includes(serviceArea) ||
+            serviceArea.includes(lawyerArea)
+          )
+            return true;
+          return false;
+        }),
+      );
     })
     .map(({ lawyer, member }) => ({
       id: lawyer.id,

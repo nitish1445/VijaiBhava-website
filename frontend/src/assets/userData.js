@@ -59,6 +59,7 @@ export const teamMembers = [
       "Cyber Law",
       "Alternative Dispute Resolution",
       "White-Collar Crime",
+      "Aviation & Maritime Law",
     ],
     bio: `Vicky Kumar Maurya is a technology and intellectual property specialist who advises startups, established tech firms, and creative businesses on protection and monetization of IP assets. His work spans patent, trademark and trade secret strategy, licensing, and enforcement across jurisdictions.
 

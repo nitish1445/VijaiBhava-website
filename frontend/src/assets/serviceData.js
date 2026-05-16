@@ -47,9 +47,7 @@ export const services = [
           "Workouts, insolvency strategy, and pragmatic solutions for distressed businesses.",
       },
     ],
-    lawyers: [
-      { id: "manish-sharma" },
-    ],
+    lawyers: [{ id: "manish-sharma" }],
     relatedServices: ["litigation", "intellectual-property", "tax-law"],
     caseTypes: [
       {
@@ -90,7 +88,12 @@ export const services = [
       "Representing clients in high-stakes disputes with a trial-ready strategy and commercial focus.",
     longDescription:
       "Our litigation team handles matters that demand strategic thinking, technical command, and courtroom discipline. We advise on commercial disputes, injunctions, regulatory investigations, and arbitration proceedings. Whether the objective is a negotiated settlement or a hard-fought trial, we prepare each case to create leverage and protect client interests at every stage.",
-    practiceAreas: ["Litigation", "Civil Disputes", "Commercial Disputes", "Alternative Dispute Resolution"],
+    practiceAreas: [
+      "Litigation",
+      "Civil Disputes",
+      "Commercial Disputes",
+      "Alternative Dispute Resolution",
+    ],
     features: [
       {
         title: "Commercial Litigation",
@@ -118,6 +121,7 @@ export const services = [
       },
     ],
     lawyers: [
+      { id: "manish-sharma" },
       { id: "rs-sharma" },
       { id: "pratham-verma" },
     ],
@@ -161,7 +165,12 @@ export const services = [
       "Sensitive, strategic representation across divorce, custody, support, and family transitions.",
     longDescription:
       "Family disputes require both legal rigor and measured judgment. We guide clients through divorce, custody, support, asset division, adoption, and protection matters with confidentiality and care. Our goal is to secure practical outcomes that preserve dignity, protect children, and create a stable path forward.",
-    practiceAreas: ["Matrimonial Law", "Family Disputes", "Child Custody", "Settlement Negotiation"],
+    practiceAreas: [
+      "Matrimonial Law",
+      "Family Disputes",
+      "Child Custody",
+      "Settlement Negotiation",
+    ],
     features: [
       {
         title: "Divorce & Separation",
@@ -187,10 +196,7 @@ export const services = [
         description: "Forward-looking planning for high-net-worth families.",
       },
     ],
-    lawyers: [
-      { id: "jyoti-sharma" },
-      { id: "khusbu-kumari" },
-    ],
+    lawyers: [{ id: "jyoti-sharma" }, { id: "khusbu-kumari" }],
     relatedServices: ["adr", "tax-law", "real-estate"],
     caseTypes: [
       {
@@ -238,7 +244,11 @@ export const services = [
       "Efficient dispute resolution through arbitration, mediation, conciliation, and negotiation.",
     longDescription:
       "Alternative dispute resolution offers a faster, more private route to resolving conflict. We represent clients in mediation and arbitration with a focus on preserving value, reducing delay, and maintaining business relationships where possible. Our team structures each process with the same preparation and advocacy discipline used in court.",
-    practiceAreas: ["Arbitration", "Alternative Dispute Resolution", "Dispute Resolution"],
+    practiceAreas: [
+      "Arbitration",
+      "Alternative Dispute Resolution",
+      "Dispute Resolution",
+    ],
     features: [
       {
         title: "Arbitration",
@@ -266,7 +276,7 @@ export const services = [
       },
     ],
     lawyers: [
-      { id: "avinash-singh" },
+      { id: "vicky-kumar-maurya" },
       { id: "rs-sharma" },
       { id: "pratham-verma" },
     ],
@@ -338,9 +348,7 @@ export const services = [
           "Commercial agreements that monetize protected assets safely.",
       },
     ],
-    lawyers: [
-      { id: "vicky-kumar-maurya" },
-    ],
+    lawyers: [{ id: "vicky-kumar-maurya" }],
     relatedServices: ["corporate-law", "cyber-law", "litigation"],
     caseTypes: [
       {
@@ -414,9 +422,7 @@ export const services = [
         description: "Full-spectrum advocacy from charge to final appeal.",
       },
     ],
-    lawyers: [
-      { id: "manish-sharma" },
-    ],
+    lawyers: [{ id: "manish-sharma" }, { id: "vicky-kumar-maurya" }],
     relatedServices: ["litigation", "corporate-law", "cyber-law"],
     caseTypes: [
       {
@@ -485,6 +491,7 @@ export const services = [
     lawyers: [
       { id: "vicky-kumar-maurya" },
       { id: "pratham-verma" },
+      { id: "gaurav-kumar" },
     ],
     relatedServices: [
       "intellectual-property",
@@ -530,7 +537,7 @@ export const services = [
       "Legal support for aircraft, shipping, logistics, and cross-border transport matters.",
     longDescription:
       "Our aviation and maritime practice advises clients on transactions, regulatory compliance, disputes, and operational risk across highly regulated transport sectors. We handle ship arrests, cargo claims, aircraft leasing, insurance, and safety-related matters with speed and precision because these industries often cannot wait for slow legal answers.",
-    practiceAreas: ["Aviation Law", "Employment Law", "Service Matters"],
+    practiceAreas: ["Aviation Law", "Employment Law", "Service Matters","White-Collar Crime"],
     features: [
       {
         title: "Aircraft Leasing",
@@ -556,6 +563,7 @@ export const services = [
     ],
     lawyers: [
       { id: "manish-sharma" },
+      { id: "vicky-kumar-maurya" },
       { id: "avinash-singh" },
     ],
     relatedServices: ["litigation", "corporate-law", "adr"],

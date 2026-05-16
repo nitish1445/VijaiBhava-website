@@ -25,8 +25,12 @@ export const submitApplication = async (req, res, next) => {
       phone: phone.trim(),
       experience: experience.trim(),
       coverLetter: (coverLetter || "").trim(),
-      resume: file.filename,
+      resume:
+        `http://localhost:4500/uploads/${file.filename}` ||
+        `https://vijaibhavalawfirm.com/uploads/${file.filename}`,
     });
+
+    console.log("Saving application:", newApplication);
 
     const saved = await newApplication.save();
 

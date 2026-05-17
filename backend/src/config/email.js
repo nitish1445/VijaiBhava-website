@@ -5,7 +5,6 @@ dotenv.config();
 
 export const sendEmail = async (to, subject, message) => {
   try {
-    console.log("Started sending Email");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -22,7 +21,6 @@ export const sendEmail = async (to, subject, message) => {
     };
 
     const res = await transporter.sendMail(mailOption);
-    console.log(`Email recived at ${to} and the respone is `, res);
   } catch (error) {
     console.log(error);
   }

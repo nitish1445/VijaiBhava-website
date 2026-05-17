@@ -1,6 +1,6 @@
 import { sendEmail } from "../config/email.js";
 import Contact from "../models/contactModel.js";
-import { contactEmail } from "../utils/emailService.js";
+import { adminContactEmail, contactEmail } from "../utils/emailService.js";
 
 export const createContact = async (req, res, next) => {
   try {
@@ -17,17 +17,6 @@ export const createContact = async (req, res, next) => {
     } = req.body;
 
     const selectedPracticeArea = practiceArea ?? praticeArea;
-
-    console.log("Received contact data:", {
-      firstName,
-      lastName,
-      email,
-      phone,
-      company,
-      practiceArea: selectedPracticeArea,
-      message,
-      agree,
-    });
 
     if (
       !firstName ||
@@ -53,9 +42,10 @@ export const createContact = async (req, res, next) => {
       agree,
     });
 
-    contactEmail(newContact.email);
-
     const savedContact = await newContact.save();
+
+    adminContactEmail(newContact);
+    contactEmail(newContact.email);
 
     res.status(201).json(savedContact);
   } catch (error) {

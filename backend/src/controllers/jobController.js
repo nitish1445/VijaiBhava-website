@@ -1,15 +1,15 @@
 import JobApplication from "../models/jobModel.js";
-import { careerEmail } from "../utils/emailService.js";
+import { adminCareerEmail, careerEmail } from "../utils/emailService.js";
 
 // Controller: handle job application submission
 export const submitApplication = async (req, res, next) => {
   try {
     const file = req.file;
 
-    const { firstName, lastName, email, phone, experience, coverLetter } =
+    const { firstName, lastName, email, phone, experience, coverLetter, title } =
       req.body;
 
-    if (!firstName || !lastName || !email || !phone || !experience) {
+    if (!firstName || !lastName || !email || !phone || !experience || !title) {
       return res.status(400).json({ message: "Missing required fields" });
     }
 
@@ -24,6 +24,7 @@ export const submitApplication = async (req, res, next) => {
       name,
       email: email.trim(),
       phone: phone.trim(),
+      job: title.trim(),
       experience: experience.trim(),
       coverLetter: (coverLetter || "").trim(),
       resume:
@@ -31,11 +32,10 @@ export const submitApplication = async (req, res, next) => {
         `https://vijaibhavalawfirm.com/uploads/${file.filename}`,
     });
 
-    console.log("Saving application:", newApplication);
-
-    careerEmail(newApplication.email);
-
     const saved = await newApplication.save();
+
+    adminCareerEmail(newApplication);
+    careerEmail(newApplication.email);
 
     res.status(201).json(newApplication);
   } catch (error) {

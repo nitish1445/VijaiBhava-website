@@ -164,18 +164,14 @@ export const contactEmail = async (to) => {
     `;
 
     await sendEmail(to, subject, message);
-
-    console.log("Contact email sent successfully");
   } catch (error) {
     console.log("Error sending email", error);
   }
 };
 
-
 export const careerEmail = async (to) => {
   try {
-    const subject =
-      "Application Received | Vijai Bhava Law Firm";
+    const subject = "Application Received | Vijai Bhava Law Firm";
 
     const message = `
     <div style="margin:0; padding:0; background:#faf8f3; font-family:Arial, sans-serif;">
@@ -353,9 +349,121 @@ export const careerEmail = async (to) => {
     `;
 
     await sendEmail(to, subject, message);
-
-    console.log("Career email sent successfully");
   } catch (error) {
     console.log("Error sending career email", error);
   }
+};
+
+export const adminContactEmail = async (contact) => {
+  const to = "nitishroy.dz@gmail.com";
+  const subject = "Received New Contact Form";
+  const message = `
+    <h2>New Contact Form Submission</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" 
+      style="border-collapse: collapse; width: 100%; font-family: Arial;">
+
+      <tr style="background-color: #f2f2f2;">
+        <th align="left">Field</th>
+        <th align="left">Value</th>
+      </tr>
+
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>${contact.name}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Email</strong></td>
+        <td>${contact.email}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Phone</strong></td>
+        <td>${contact.phone}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Company</strong></td>
+        <td>${contact.company}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Practice Area</strong></td>
+        <td>${contact.practiceArea}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Message</strong></td>
+        <td>${contact.message}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Agreement Accepted</strong></td>
+        <td>${contact.agree ? "Yes" : "No"}</td>
+      </tr>
+
+    </table>
+  `;
+
+  sendEmail(to, subject, message);
+};
+
+export const adminCareerEmail = async (career) => {
+  const to = "nitishroy.dz@gmail.com";
+  const subject = "Received New Career Application";
+  const message = `
+    <h2>New Career Application</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0"
+      style="border-collapse: collapse; width: 100%; font-family: Arial;">
+
+      <tr style="background:#f2f2f2;">
+        <th align="left">Field</th>
+        <th align="left">Value</th>
+      </tr>
+
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>${career.name}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Email</strong></td>
+        <td>${career.email}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Phone</strong></td>
+        <td>${career.phone}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Job Position</strong></td>
+        <td>${career.job}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Experience</strong></td>
+        <td>${career.experience}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Cover Letter</strong></td>
+        <td>${career.coverLetter}</td>
+      </tr>
+
+      <tr>
+        <td><strong>Resume URL</strong></td>
+        <td>
+          <a href="${career.resume}" target="_blank">
+            View Resume
+          </a>
+        </td>
+      </tr>
+
+    </table>
+  `;
+
+  sendEmail(to, subject, message);
 };

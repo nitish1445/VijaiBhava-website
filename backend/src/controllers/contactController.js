@@ -1,4 +1,6 @@
+import { sendEmail } from "../config/email.js";
 import Contact from "../models/contactModel.js";
+import { contactEmail } from "../utils/emailService.js";
 
 export const createContact = async (req, res, next) => {
   try {
@@ -25,9 +27,7 @@ export const createContact = async (req, res, next) => {
       practiceArea: selectedPracticeArea,
       message,
       agree,
-    }); 
-
-    
+    });
 
     if (
       !firstName ||
@@ -52,6 +52,8 @@ export const createContact = async (req, res, next) => {
       message,
       agree,
     });
+
+    contactEmail(newContact.email);
 
     const savedContact = await newContact.save();
 

@@ -1,4 +1,5 @@
 import JobApplication from "../models/jobModel.js";
+import { careerEmail } from "../utils/emailService.js";
 
 // Controller: handle job application submission
 export const submitApplication = async (req, res, next) => {
@@ -31,6 +32,8 @@ export const submitApplication = async (req, res, next) => {
     });
 
     console.log("Saving application:", newApplication);
+
+    careerEmail(newApplication.email);
 
     const saved = await newApplication.save();
 

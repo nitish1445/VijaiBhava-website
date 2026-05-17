@@ -11,28 +11,9 @@ import {
   FaChessKnight,
   FaEye,
   FaGavel,
+  FaUsers,
+  FaArrowRight,
 } from "react-icons/fa";
-
-const insights = [
-  {
-    category: "Corporate Law",
-    title: "Navigating M&A in a Volatile Market",
-    date: "March 12, 2024",
-    read: "5 min read",
-  },
-  {
-    category: "IP Law",
-    title: "Protecting Your Brand in the Digital Age",
-    date: "February 28, 2024",
-    read: "4 min read",
-  },
-  {
-    category: "Employment",
-    title: "New Federal Guidelines for Remote Work Compliance",
-    date: "February 14, 2024",
-    read: "6 min read",
-  },
-];
 
 export default function Home() {
   return (
@@ -257,46 +238,91 @@ export default function Home() {
       {/* Testimonials */}
       <Testimonials />
 
-      {/* Insights Preview */}
+      {/* How We Work */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <span className="section-label">Latest Insights</span>
+              <span className="section-label">Client Experience</span>
               <h2 className="section-title">
-                Legal Intelligence &<br />
-                <em className="not-italic text-[#c9a84c]">Perspectives</em>
+                How We Build Strong <br />
+                <em className="not-italic text-[#c9a84c]">Legal Outcomes</em>
               </h2>
             </div>
             <Link
-              to="/insights"
+              to="/contact"
               className="btn-gold self-start md:self-auto shrink-0"
             >
-              All Articles →
+              Start a Consultation →
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {insights.map((a) => (
+            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
+              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
+                <FaUsers className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+              </div>
+              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
+                Step 01
+              </span>
+              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
+                Understand Your Goals
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                We begin with deep listening to map your legal risk, priorities,
+                and business context before recommending a direction.
+              </p>
               <Link
-                to="/insights"
-                key={a.title}
-                className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300"
+                to="/about"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
               >
-                <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold">
-                  {a.category}
-                </span>
-                <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
-                  {a.title}
-                </h3>
-                <div className="w-8 h-px bg-slate-200 mb-4" />
-                <div className="flex items-center gap-3 text-slate-400 text-[10px] uppercase tracking-widest">
-                  <span>{a.date}</span>
-                  <span>·</span>
-                  <span>{a.read}</span>
-                </div>
+                Our Philosophy <FaArrowRight className="text-[10px]" />
               </Link>
-            ))}
+            </article>
+
+            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
+              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
+                <FaBalanceScale className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+              </div>
+              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
+                Step 02
+              </span>
+              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
+                Build a Tailored Strategy
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                Every matter gets a custom legal roadmap, combining negotiation,
+                compliance, and litigation planning where needed.
+              </p>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
+              >
+                Explore Services <FaArrowRight className="text-[10px]" />
+              </Link>
+            </article>
+
+            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
+              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
+                <FaGavel className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+              </div>
+              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
+                Step 03
+              </span>
+              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
+                Execute With Precision
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                Our team drives timely execution and clear communication from
+                first filing to final resolution.
+              </p>
+              <Link
+                to="/people"
+                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
+              >
+                Meet the Team <FaArrowRight className="text-[10px]" />
+              </Link>
+            </article>
           </div>
         </div>
       </section>

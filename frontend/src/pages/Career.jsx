@@ -173,13 +173,13 @@ export default function Career() {
               {
                 quote:
                   "The mentorship I've received here has accelerated my career by years.",
-                name: "Nitish Yadav, Associate",
+                name: "Jyoti Sharma, Partner",
                 rating: 5,
               },
               {
                 quote:
                   "Vijai Bhava gives you real responsibility from day one. I was in a courtroom in my first month.",
-                name: "Aman Verma, Litigation Associate",
+                name: "Pratham Verma, Partner",
                 rating: 5,
               },
             ].map((q) => (
@@ -224,7 +224,7 @@ export default function Career() {
           <p className="text-slate-500 text-sm text-center mt-8">
             Don't see the right fit?{" "}
             <a
-              href="mailto:careers@harringtonlaw.com"
+              href="mailto:india@vijaibhavalawfirm.com"
               className="text-[#c9a84c] hover:underline"
             >
               Send us your resume

@@ -102,9 +102,9 @@ export default function About() {
           <div className="grid grid-cols-2 gap-0 border border-slate-100 bg-[#faf8f3] shadow-sm">
             {[
               { num: "1985", label: "Year Founded" },
+              { num: "41", label: "Year of Legacy" },
+              { num: "10+", label: "Attorneys" },
               { num: "2,400+", label: "Cases Won" },
-              { num: "48+", label: "Attorneys" },
-              { num: "12", label: "Office Locations" },
             ].map((s) => (
               <div
                 key={s.label}

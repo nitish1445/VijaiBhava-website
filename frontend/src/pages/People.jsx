@@ -1,11 +1,28 @@
 import TeamCard from "../components/TeamCard";
 import { teamMembers } from "../assets/userData";
 import { services } from "../assets/serviceData";
+import { IoMdInfinite } from "react-icons/io";
 
 const practiceAreaCount = services.length;
 
 export default function People() {
-  const attorneysCount = teamMembers.length;
+  // const attorneysCount = teamMembers.length;
+  // const experienceYears = teamMembers
+  //   .map((m) => m.experience?.years)
+  //   .filter(Boolean);
+  // const avgExperience =
+  //   experienceYears.length > 0
+  //     ? Math.round(
+  //         experienceYears.reduce((a, b) => a + b, 0) / experienceYears.length,
+  //       )
+  //     : null;
+  // const uniquePracticeAreas = new Set(
+  //   teamMembers.flatMap((m) => m.practiceAreas || []),
+  // );
+  // const totalNotableMatters = teamMembers.reduce(
+  //   (s, m) => s + (m.notableMatters ? m.notableMatters.length : 0),
+  //   0,
+  // );
 
   return (
     <main className="bg-[#faf8f3]">
@@ -83,16 +100,16 @@ export default function People() {
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             {[
-              { label: "Women Partners", value: "42%" },
-              { label: "Minority Attorneys", value: "38%" },
-              { label: "Pro Bono Hours (2023)", value: "12,400+" },
-              { label: "Avg. Attorney Tenure", value: "11 yrs" },
+              { label: "Attorneys", value: "10+" },
+              { label: "Avg. Experience", value: "16 yrs" },
+              { label: "Practice Areas", value: "20+" },
+              { label: "Notable Matters", value: <IoMdInfinite /> },
             ].map((stat) => (
               <div
                 key={stat.label}
                 className="border border-white/10 p-8 text-center transition-colors duration-300 hover:border-[#c9a84c]/40"
               >
-                <div className="font-serif text-3xl text-[#c9a84c] font-light mb-2">
+                <div className="font-serif text-3xl flex flex-cols items-center justify-center text-[#c9a84c] font-light mb-2">
                   {stat.value}
                 </div>
                 <div className="text-white/50 text-[10px] tracking-widest uppercase">

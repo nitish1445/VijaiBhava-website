@@ -78,10 +78,10 @@ export default function Hero() {
           style={{ animationDelay: "0.55s", opacity: 0 }}
         >
           {[
-            { value: "41+", label: "Years of Excellence" },
+            { value: "41", label: "Years of Excellence" },
             { value: "2,400+", label: "Cases Won" },
             { value: "98%", label: "Client Satisfaction" },
-            { value: "48", label: "Expert Attorneys" },
+            { value: "10", label: "Expert Attorneys" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-serif text-3xl md:text-4xl text-[#c9a84c] font-light">

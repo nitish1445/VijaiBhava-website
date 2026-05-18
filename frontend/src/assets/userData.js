@@ -43,6 +43,16 @@ export const teamMembers = [
     ],
     gender: "male",
     image: manishImg || null,
+    experience: {
+      years: 15,
+      summary:
+        "Brings 15+ years of corporate advisory experience across M&A, restructurings, governance, and investor work.",
+      highlights: [
+        "Cross-border M&A and transaction leadership",
+        "Corporate governance and regulatory compliance",
+        "Private equity and restructuring support",
+      ],
+    },
     notableMatters: [
       "Advised a cross-border M&A involving an India-based target and multinational acquirer, managing regulatory approvals and purchase agreement negotiations.",
       "Led a multi-layered corporate restructuring for a family-owned conglomerate to separate business lines and optimize tax and governance outcomes.",
@@ -116,6 +126,16 @@ export const teamMembers = [
     ],
     gender: "male",
     image: rSharmaImg || null,
+    experience: {
+      years: 41,
+      summary:
+        "Brings over four decades of courtroom experience in civil, commercial, and appellate litigation.",
+      highlights: [
+        "High Court and Supreme Court advocacy",
+        "Commercial disputes and contract enforcement",
+        "Appellate strategy and procedural mastery",
+      ],
+    },
     notableMatters: [
       "Obtained a landmark appellate judgment in a commercial dispute on contract interpretation before the Supreme Court.",
       "Successfully argued a complex civil enforcement matter involving multi-jurisdictional parties and injunctive relief.",
@@ -125,6 +145,16 @@ export const teamMembers = [
   {
     id: "jyoti-sharma",
     name: "Jyoti Sharma",
+    experience: {
+      years: 7,
+      summary:
+        "Has more than seven years of experience handling family disputes, custody matters, and negotiated settlements.",
+      highlights: [
+        "Custody and child welfare litigation",
+        "Matrimonial settlements and mediation",
+        "Sensitive client counselling and negotiation",
+      ],
+    },
     title: "Partner",
     specialty: "Matrimonial & Family Law",
     practiceAreas: [
@@ -161,6 +191,16 @@ export const teamMembers = [
   {
     id: "gaurav-gulati",
     name: "Gaurav Gulati",
+    experience: {
+      years: 10,
+      summary:
+        "Brings 10+ years of experience in aviation, maritime, employment, and regulated-entity dispute work.",
+      highlights: [
+        "Aviation and maritime compliance",
+        "Employment disputes and service matters",
+        "Arbitration and operational risk management",
+      ],
+    },
     title: "Partner",
     specialty: "Cyber Law ",
     practiceAreas: [
@@ -193,6 +233,16 @@ export const teamMembers = [
   {
     id: "pratham-verma",
     name: "Pratham Verma",
+    experience: {
+      years: 7,
+      summary:
+        "Has 7+ years of experience in commercial litigation, technology disputes, and alternative dispute resolution.",
+      highlights: [
+        "Led clients to successful outcomes in commercial litigation and arbitration",
+        "Managed complex cyber-related disputes and enforcement actions",
+        " Negotiated high-stakes settlements in technology and IP matters",
+      ],
+    },
     title: "Partner",
     specialty: "Litigation & Dispute Resolution",
     practiceAreas: [
@@ -212,7 +262,6 @@ export const teamMembers = [
         institution: "IME Law College, Uttar Pradesh",
         degree: "B.A. LL.B. (Hons.)",
       },
-      
     ],
     barAdmissions: null,
     gender: "male",
@@ -295,5 +344,4 @@ export const teamMembers = [
       "Led successful protective relief proceedings resulting in client safety and effective enforcement measures.",
     ],
   },
-  
 ];

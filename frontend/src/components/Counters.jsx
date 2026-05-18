@@ -1,12 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { end: 41, suffix: "+", label: "Years of Excellence", desc: "Serving clients since 1987" },
-  { end: 2400, suffix: "+", label: "Cases Successfully Closed", desc: "Across all practice areas" },
-  { end: 98, suffix: "%", label: "Client Satisfaction Rate", desc: "Based on annual surveys" },
-  { end: 48, suffix: "", label: "Expert Attorneys", desc: "Across 12 specializations" },
-  { end: 180, suffix: "M+", label: "Settlements Recovered", desc: "For our clients in 2023" },
-  { end: 12, suffix: "", label: "Office Locations", desc: "Nationally & internationally" },
+  {
+    end: 41,
+    suffix: "+",
+    label: "Years of Excellence",
+    desc: "Serving clients since 1985",
+  },
+  {
+    end: 10,
+    suffix: "+",
+    label: "Practice Areas",
+    desc: "Comprehensive legal expertise",
+  },
+  {
+    end: 10,
+    suffix: "",
+    label: "Expert Attorneys",
+    desc: "Across 8 specializations",
+  },
+  {
+    end: 98,
+    suffix: "%",
+    label: "Client Satisfaction Rate",
+    desc: "Based on annual surveys",
+  },
+  {
+    end: 180,
+    suffix: "M+",
+    label: "Settlements Recovered",
+    desc: "For our clients in 2023",
+  },
+  {
+    end: 24,
+    suffix: "/7",
+    label: "Client Support",
+    desc: "Responsive legal guidance anytime",
+  },
 ];
 
 function useCountUp(end, duration = 2000, shouldStart = false) {
@@ -33,9 +63,12 @@ function Counter({ stat, shouldStart }) {
   return (
     <div className="text-center p-8 border-b border-r border-white/10 group hover:bg-[#c9a84c]/5 transition-colors duration-300">
       <div className="font-serif text-4xl md:text-5xl text-[#c9a84c] font-light mb-2">
-        {count.toLocaleString()}{stat.suffix}
+        {count.toLocaleString()}
+        {stat.suffix}
       </div>
-      <div className="text-white text-sm font-medium tracking-wide mb-1">{stat.label}</div>
+      <div className="text-white text-sm font-medium tracking-wide mb-1">
+        {stat.label}
+      </div>
       <div className="text-white/40 text-[10px] tracking-wide">{stat.desc}</div>
     </div>
   );
@@ -47,8 +80,13 @@ export default function Counters() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
-      { threshold: 0.2 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();

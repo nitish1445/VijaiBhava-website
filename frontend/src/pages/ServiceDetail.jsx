@@ -95,6 +95,7 @@ export default function ServiceDetail() {
       image: member.image ?? null,
       bio: member.bio ?? null,
       gender: member.gender ?? null,
+      experience: member.experience ?? null,
     }));
 
   const relatedServices = (service.relatedServices || [])

@@ -17,10 +17,11 @@ const quickLinks = [
   { label: "About the Firm", path: "/about" },
   { label: "Our People", path: "/people" },
   { label: "Practice Areas", path: "/services" },
-  { label: "Awards & Recognition", path: "/awards" },
-  { label: "Insights & Articles", path: "/insights" },
   { label: "Careers", path: "/careers" },
   { label: "Contact Us", path: "/contact" },
+  { label: "Privacy Policy", path: "/privacy-policy" },
+  { label: "Terms & Conditions", path: "/terms-and-conditions" },
+  { label: "Disclaimer", path: "/disclaimer" },
 ];
 
 export default function Footer() {
@@ -53,13 +54,17 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-3">
               {[
                 { icon: <FaFacebookF />, href: "#" },
-                { icon: <FaLinkedinIn />, href: "#" },
+                {
+                  icon: <FaLinkedinIn />,
+                  href: "https://www.linkedin.com/in/vijai-bhava-law-firm-8a937a40b",
+                },
                 { icon: <FaInstagram />, href: "#" },
                 { icon: <FaXTwitter />, href: "#" },
               ].map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
+                  target="_blank"
                   className="group w-9 h-9 flex items-center justify-center border border-white/10 text-white/60 rounded transition-all duration-300 hover:border-[#c9a84c] hover:text-[#c9a84c] hover:bg-white/5"
                 >
                   <span className="text-sm group-hover:scale-110 transition-transform">
@@ -187,7 +192,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-2 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-[12px] flex items-center gap-1">
             <BiCopyright />
             <span>
@@ -196,24 +201,9 @@ export default function Footer() {
             </span>
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-end">
-            <Link
-              to="/privacy-policy"
-              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms-and-conditions"
-              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
-            >
-              Terms & Conditions
-            </Link>
-            <Link
-              to="/disclaimer"
-              className="text-white/30 text-[10px] hover:text-[#c9a84c] transition-colors"
-            >
-              Disclaimer
-            </Link>
+            <span className="text-white/30 text-[10px] transition-colors">
+              Designed with ♥️ by Rakhi Rani.
+            </span>
           </div>
         </div>
       </div>

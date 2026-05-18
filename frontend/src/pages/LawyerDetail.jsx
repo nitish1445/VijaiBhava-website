@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { teamMembers } from "../assets/userData";
-import { FaEnvelope, FaLinkedin} from "react-icons/fa";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 // images are provided per-team-member in `userData`
 
 const actions = [
@@ -11,7 +11,14 @@ const actions = [
 export default function LawyerDetail() {
   const { id } = useParams();
   const lawyer = teamMembers.find((m) => m.id === id);
-  const email = lawyer?.email || `${lawyer?.name?.toLowerCase().replace(/\s+/g, ".")}@vijaibhavalawfirm.com`;
+
+  const experience = lawyer?.experience;
+  // ?? {
+  //   years: null,
+  //   summary: "Experience details are available on request.",
+  //   highlights: [],
+  // }
+
   const education = lawyer?.education ?? [
     {
       institution: "National Law University, Delhi",
@@ -106,7 +113,11 @@ export default function LawyerDetail() {
                   const isEmail = btn.label === "Email";
                   return (
                     <a
-                      href={isEmail ? `mailto:${email}` : "https://www.linkedin.com"}
+                      href={
+                        isEmail
+                          ? "mailto:india@vijaibhavalawfirm.com"
+                          : "https://www.linkedin.com/in/vijai-bhava-law-firm-8a937a40b"
+                      }
                       key={btn.label}
                       className="btn-gold text-[10px] py-2 px-4 flex items-center gap-2"
                       target={isEmail ? undefined : "_blank"}
@@ -132,12 +143,44 @@ export default function LawyerDetail() {
             <div>
               <span className="section-label">Biography</span>
 
-              {(lawyer.bio || "").split(/\n\s*\n/).filter(Boolean).map((para, i) => (
-                <p key={i} className="text-slate-600 text-sm mt-3">
-                  {para}
-                </p>
-              ))}
+              {(lawyer.bio || "")
+                .split(/\n\s*\n/)
+                .filter(Boolean)
+                .map((para, i) => (
+                  <p key={i} className="text-slate-600 text-sm mt-3">
+                    {para}
+                  </p>
+                ))}
             </div>
+
+            {/* Experience */}
+            {experience && (
+              <div>
+                <span className="section-label">Experience</span>
+
+                <div className="mt-4 border bg-[#faf8f3] p-6">
+                  {experience.years && (
+                    <div className="font-serif text-4xl text-[#0a1628] font-light">
+                      {experience.years}+ Years
+                    </div>
+                  )}
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {experience.summary}
+                  </p>
+
+                  {!!experience.highlights?.length && (
+                    <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                      {experience.highlights.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#c9a84c] shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Matters */}
             <div>
@@ -176,7 +219,9 @@ export default function LawyerDetail() {
                   <li key={`${item.institution}-${item.degree}`}>
                     {item.institution}
                     <br />
-                    <span className="text-xs text-slate-500">{item.degree}</span>
+                    <span className="text-xs text-slate-500">
+                      {item.degree}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -210,6 +255,3 @@ export default function LawyerDetail() {
     </main>
   );
 }
-
-
-

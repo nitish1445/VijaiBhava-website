@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function TeamCard({ member }) {
-  const { id, name, title, specialty, image, bio } = member || {};
+  const { id, name, title, specialty, image, bio, experience } = member || {};
 
   const avatar = image || null;
   const initials = name
@@ -35,14 +35,30 @@ export default function TeamCard({ member }) {
             </div>
           </div>
         )}
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/20 to-transparent" />
+
+        {/* Experience */}
+        <div className="absolute top-0 right-0 p-1">
+          {experience?.years && (
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-3 py-1 text-[8px] uppercase text-white shadow-lg">
+              <span className="font-semibold text-[#f3d98b]">
+                {experience.years}+
+              </span>
+              <span className="text-white/80">years of experience</span>
+            </div>
+          )}
+        </div>
+
         {/* Name on image */}
         <div className="absolute bottom-0 left-0 right-0 p-5">
           <div className="text-[#c9a84c] text-[9px] tracking-[0.3em] uppercase mb-1">
             {specialty}
           </div>
-          <h3 className="text-white font-serif text-xl font-light">Adv. {name}</h3>
+          <h3 className="text-white font-serif text-xl font-light">
+            Adv. {name}
+          </h3>
         </div>
       </div>
 
@@ -51,6 +67,7 @@ export default function TeamCard({ member }) {
         <p className="text-[#c9a84c] text-[10px] tracking-widest uppercase font-semibold mb-2">
           {title}
         </p>
+
         {bio && (
           <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
             {bio}

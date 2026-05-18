@@ -22,87 +22,141 @@ export default function Home() {
       <Hero />
 
       {/* Core Pillars */}
+      <section className="relative overflow-hidden py-28 bg-[#f8f6f1]">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#c9a84c]/10 blur-3xl rounded-full" />
+          <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-[#0a1628]/5 blur-3xl rounded-full" />
+        </div>
 
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="relative max-w-7xl mx-auto px-6">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <span className="text-[16px] tracking-[0.35em] uppercase text-[#c9a84c] font-semibold">
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <span className="inline-flex items-center justify-center gap-2 text-[11px] uppercase tracking-[0.35em] text-[#c9a84c] font-semibold mb-5">
               Our Approach
             </span>
 
-            <h2 className="text-2xl sm:text-3xl font-serif font-medium text-[#0a1628] mt-4">
-              The Pillars That Define Our Practice
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-[#0a1628]">
+              The Principles Behind
+              <br />
+              <span className="text-[#c9a84c] italic">
+                Every Legal Strategy
+              </span>
             </h2>
 
-            <div className="w-10 h-px bg-[#c9a84c] mx-auto mt-6" />
+            <p className="mt-6 text-slate-600 leading-relaxed text-sm sm:text-base">
+              Our practice is built on precision, trust, and forward-thinking
+              advocacy—ensuring every client engagement reflects excellence at
+              every stage.
+            </p>
           </div>
 
           {/* Pillars Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {/* Connector Line */}
+            <div className="hidden md:block absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-            {/* Pillar 1 */}
-            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
-                <FaBalanceScale className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+            {/* PILLAR 1 */}
+            <article className="group relative bg-white/80 backdrop-blur-xl border border-white/40 p-10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              {/* Hover Glow */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#c9a84c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                {/* Top */}
+                <div className="flex items-center justify-between mb-10">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c] transition-all duration-500">
+                    <FaBalanceScale className="text-[#c9a84c] text-2xl group-hover:text-[#0a1628] transition-colors duration-500" />
+                  </div>
+
+                  <span className="text-5xl font-serif text-[#c9a84c]/15 group-hover:text-[#c9a84c]/30 transition-colors duration-500">
+                    01
+                  </span>
+                </div>
+
+                {/* Divider */}
+                <div className="w-8 h-px bg-[#c9a84c] mb-8 transition-all duration-500 group-hover:w-14" />
+
+                {/* Content */}
+                <h3 className="font-serif text-2xl text-[#0a1628] mb-5 font-semibold italic tracking-wide transition-colors duration-300 group-hover:text-[#c9a84c]">
+                  Strategic Excellence
+                </h3>
+
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  We go beyond legal guidance by crafting strategic legal
+                  frameworks—ensuring every decision supports your broader
+                  business and personal objectives.
+                </p>
               </div>
+            </article>
 
-              <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
+            {/* PILLAR 2 */}
+            <article className="group relative bg-[#0a1628] text-white p-10 shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              {/* Background Glow */}
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[#c9a84c]/20 blur-3xl rounded-full" />
 
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
-                Strategic Excellence
-              </h3>
+              <div className="relative z-10">
+                {/* Top */}
+                <div className="flex items-center justify-between mb-10">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c] flex items-center justify-center transition-all duration-500">
+                    <FaShieldAlt className="text-[#0a1628] text-2xl group-hover:text-white transition-colors duration-500" />
+                  </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
-                We don't just provide legal opinions; we deliver strategic
-                roadmaps—ensuring every legal decision aligns with your
-                long-term objectives.
-              </p>
-            </div>
+                  <span className="text-5xl font-serif text-white/10">02</span>
+                </div>
 
-            {/* Pillar 2 */}
-            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
-                <FaShieldAlt className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+                {/* Divider */}
+                <div className="w-8 h-px bg-[#c9a84c] mb-8 transition-all duration-500 group-hover:w-14" />
+
+                {/* Content */}
+                <h3 className="font-serif text-2xl mb-5 text-[#f8f6f1] font-semibold italic tracking-wide transition-colors duration-300 group-hover:text-[#c9a84c]">
+                  Integrity & Transparency
+                </h3>
+
+                <p className="text-slate-300 leading-relaxed text-sm">
+                  We believe trust is built through clarity, honesty, and
+                  ethical advocacy—creating long-term relationships grounded in
+                  confidence and transparency.
+                </p>
               </div>
+            </article>
 
-              <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
+            {/* PILLAR 3 */}
+            <article className="group relative bg-white/80 backdrop-blur-xl border border-white/40 p-10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              {/* Hover Glow */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#c9a84c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
-                Integrity & Transparency
-              </h3>
+              <div className="relative z-10">
+                {/* Top */}
+                <div className="flex items-center justify-between mb-10">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c] transition-all duration-500">
+                    <FaLightbulb className="text-[#c9a84c] text-2xl group-hover:text-[#0a1628] transition-colors duration-500" />
+                  </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
-                We prioritize clarity and honesty—building long-term
-                relationships through ethical practice and transparent
-                communication.
-              </p>
-            </div>
+                  <span className="text-5xl font-serif text-[#c9a84c]/15 group-hover:text-[#c9a84c]/30 transition-colors duration-500">
+                    03
+                  </span>
+                </div>
 
-            {/* Pillar 3 */}
-            <div className="group flex flex-col justify-between p-8 border border-black/5 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#c9a84c]/10 rounded-full mb-6 transition-all duration-300 group-hover:bg-[#c9a84c]">
-                <FaLightbulb className="text-[#c9a84c] text-lg transition-all duration-300 group-hover:text-black" />
+                {/* Divider */}
+                <div className="w-8 h-px bg-[#c9a84c] mb-8 transition-all duration-500 group-hover:w-14" />
+
+                {/* Content */}
+                <h3 className="font-serif text-2xl text-[#0a1628] mb-5 font-semibold italic tracking-wide transition-colors duration-300 group-hover:text-[#c9a84c]">
+                  Future-Ready Advocacy
+                </h3>
+
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  We stay ahead of emerging regulations and evolving legal
+                  landscapes—helping clients remain protected, adaptive, and
+                  prepared for tomorrow’s challenges.
+                </p>
               </div>
-
-              <div className="w-6 h-px bg-[#c9a84c] mb-6 transition-all duration-300 group-hover:w-10" />
-
-              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#0a1628] mb-4">
-                Future-Ready Advocacy
-              </h3>
-
-              <p className="text-slate-600 text-sm leading-relaxed">
-                We stay ahead of evolving regulations and
-                technologies—protecting your interests today while preparing you
-                for tomorrow.
-              </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Our Promise */}
-
+      {/* Our Commitment */}
       <section className="py-24 bg-[#0a1628] text-white">
         <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
@@ -239,89 +293,148 @@ export default function Home() {
       <Testimonials />
 
       {/* How We Work */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-            <div>
-              <span className="section-label">Client Experience</span>
-              <h2 className="section-title">
-                How We Build Strong <br />
-                <em className="not-italic text-[#c9a84c]">Legal Outcomes</em>
+      <section className="relative overflow-hidden py-28 bg-[#f8f6f1]">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#c9a84c]/10 blur-3xl rounded-full" />
+          <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-[#0a1628]/5 blur-3xl rounded-full" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.35em] text-[#c9a84c] font-semibold mb-5">
+                {/* <span className="w-10 h-px bg-[#c9a84c]" /> */}
+                Client Experience
+              </span>
+
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight text-[#0a1628]">
+                How We Create
+                <br />
+                <span className="text-[#c9a84c] italic">
+                  Powerful Legal Results
+                </span>
               </h2>
+
+              <p className="mt-6 text-slate-600 leading-relaxed max-w-xl">
+                Every engagement is built on trust, strategic planning, and
+                relentless execution tailored to your legal objectives.
+              </p>
             </div>
+
             <Link
               to="/contact"
-              className="btn-gold self-start md:self-auto shrink-0"
+              className="group inline-flex items-center gap-3 bg-[#0a1628] hover:bg-[#c9a84c] text-white px-7 py-4 text-sm tracking-[0.15em] uppercase transition-all duration-500 shadow-xl hover:shadow-[#c9a84c]/30"
             >
-              Start a Consultation →
+              Start a Consultation
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
-              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
-                <FaUsers className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {/* Timeline Connector */}
+            <div className="hidden md:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent" />
+
+            {/* CARD 1 */}
+            <article className="group relative bg-white/80 backdrop-blur-xl border border-white/40 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#c9a84c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c] transition-all duration-500">
+                    <FaUsers className="text-[#c9a84c] text-2xl group-hover:text-[#0a1628] transition-colors duration-500 group-hover:scale-105" />
+                  </div>
+
+                  <span className="text-5xl font-serif text-[#c9a84c]/15 group-hover:text-[#c9a84c]/30 transition-colors duration-500">
+                    01
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-2xl text-[#0a1628] mb-4 transition-all duration-300 font-semibold italic tracking-wide group-hover:text-[#c9a84c]">
+                  Understand Your Goals
+                </h3>
+
+                <p className="text-slate-600 leading-relaxed mb-8 text-sm">
+                  We begin with deep listening to understand your priorities,
+                  business concerns, legal exposure, and long-term objectives.
+                </p>
+
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-[#0a1628] hover:text-[#c9a84c] transition-colors"
+                >
+                  Our Philosophy
+                  <FaArrowRight className="text-xs" />
+                </Link>
               </div>
-              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
-                Step 01
-              </span>
-              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
-                Understand Your Goals
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                We begin with deep listening to map your legal risk, priorities,
-                and business context before recommending a direction.
-              </p>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
-              >
-                Our Philosophy <FaArrowRight className="text-[10px]" />
-              </Link>
             </article>
 
-            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
-              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
-                <FaBalanceScale className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+            {/* CARD 2 */}
+            <article className="group relative bg-[#0a1628] text-white p-8 shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-[#c9a84c]/20 blur-3xl rounded-full" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c] flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                    <FaBalanceScale className="text-[#0a1628] text-2xl group-hover:text-white transition-colors duration-300" />
+                  </div>
+
+                  <span className="text-5xl font-serif text-white/10">02</span>
+                </div>
+
+                <h3 className="font-serif text-2xl mb-4 text-[#f8f6f1] transition-all duration-300 font-semibold italic tracking-wide group-hover:text-[#c9a84c]">
+                  Build a Tailored Strategy
+                </h3>
+
+                <p className="text-slate-300 leading-relaxed mb-8 text-sm">
+                  We design a precise legal roadmap aligned with negotiation,
+                  compliance, litigation, and risk mitigation priorities.
+                </p>
+
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 text-sm text-[#c9a84c] hover:text-white transition-colors"
+                >
+                  Explore Services
+                  <FaArrowRight className="text-xs" />
+                </Link>
               </div>
-              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
-                Step 02
-              </span>
-              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
-                Build a Tailored Strategy
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                Every matter gets a custom legal roadmap, combining negotiation,
-                compliance, and litigation planning where needed.
-              </p>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
-              >
-                Explore Services <FaArrowRight className="text-[10px]" />
-              </Link>
             </article>
 
-            <article className="group border border-slate-100 p-8 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all duration-300">
-              <div className="w-11 h-11 flex items-center justify-center rounded-full bg-[#c9a84c]/10 mb-5 group-hover:bg-[#c9a84c] transition-all duration-300">
-                <FaGavel className="text-[#c9a84c] group-hover:text-[#0a1628] transition-colors duration-300" />
+            {/* CARD 3 */}
+            <article className="group relative bg-white/80 backdrop-blur-xl border border-white/40 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-[#c9a84c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="w-14 h-14 rounded-full bg-[#c9a84c]/10 flex items-center justify-center group-hover:bg-[#c9a84c] transition-all duration-500">
+                    <FaGavel className="text-[#c9a84c] text-2xl group-hover:text-[#0a1628] transition-colors duration-500 group-hover:scale-105" />
+                  </div>
+
+                  <span className="text-5xl font-serif text-[#c9a84c]/15 group-hover:text-[#c9a84c]/30 transition-colors duration-500">
+                    03
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-2xl text-[#0a1628] mb-4 transition-all duration-300 font-semibold italic tracking-wide group-hover:text-[#c9a84c]">
+                  Execute With Precision
+                </h3>
+
+                <p className="text-slate-600 leading-relaxed mb-8 text-sm">
+                  From first filing to final resolution, we focus on decisive
+                  execution, proactive communication, and measurable outcomes.
+                </p>
+
+                <Link
+                  to="/people"
+                  className="inline-flex items-center gap-3 text-sm font-medium text-[#0a1628] hover:text-[#c9a84c] transition-colors"
+                >
+                  Meet the Team
+                  <FaArrowRight className="text-xs" />
+                </Link>
               </div>
-              <span className="text-[#c9a84c] text-[10px] tracking-[0.3em] uppercase font-semibold group-hover:text-[#0a1628]">
-                Step 03
-              </span>
-              <h3 className="font-serif text-xl text-[#0a1628] mt-3 mb-4 leading-snug group-hover:text-[#c9a84c] transition-colors duration-300">
-                Execute With Precision
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                Our team drives timely execution and clear communication from
-                first filing to final resolution.
-              </p>
-              <Link
-                to="/people"
-                className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#0a1628] hover:text-[#c9a84c] transition-colors"
-              >
-                Meet the Team <FaArrowRight className="text-[10px]" />
-              </Link>
             </article>
           </div>
         </div>

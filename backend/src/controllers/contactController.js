@@ -45,7 +45,7 @@ export const createContact = async (req, res, next) => {
     const savedContact = await newContact.save();
 
     adminContactEmail(newContact);
-    contactEmail(newContact.email);
+    contactEmail(newContact);
 
     res.status(201).json(savedContact);
   } catch (error) {

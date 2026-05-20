@@ -23,16 +23,12 @@ export const teamMembers = [
 
   Manish's practice blends transactional precision with regulatory insight — advising on securities compliance, corporate governance, and industry-specific regulatory regimes. He regularly counsels founders and C-suite clients on risk allocation, contractual strategy, and litigation avoidance.
 
-  He holds a B.A. LL.B. (Hons.) from National Law University, Delhi and an LL.M. in Corporate Law from the University of Delhi. Manish is admitted to the Bar Council of Delhi and appears before the Delhi High Court and the Supreme Court of India.`,
+  He holds a B.A. LL.B. (Hons.) from I M E Law College, Gaziabad. Manish is admitted to the Bar Council of Delhi and appears before the Delhi High Court and the Supreme Court of India.`,
     email: "india@vijaibhavalawfirm.com",
     education: [
       {
-        institution: "National Law University, Delhi",
+        institution: "I M E Law College, Gaziabad",
         degree: "B.A. LL.B. (Hons.)",
-      },
-      {
-        institution: "University of Delhi",
-        degree: "LL.M. (Corporate Law)",
       },
     ],
     barAdmissions: [
@@ -201,7 +197,7 @@ export const teamMembers = [
         "Arbitration and operational risk management",
       ],
     },
-    title: "Partner",
+    title: "Senior Associate",
     specialty: "Cyber Law ",
     practiceAreas: [
       "Cyber Law",
@@ -213,12 +209,12 @@ export const teamMembers = [
 
   He regularly supports contract negotiations, vendor and partner agreements, and regulatory sign-offs for growth-stage companies and established enterprises. Gaurav's approach is solution-oriented, focusing on streamlining deals while protecting client value.
 
-  Gaurav holds a B.Com. LL.B. from the University of Delhi and brings a business-minded perspective to legal problems.`,
+  Gaurav holds a B.A. LL.B. from the C C S, Meerut and brings a business-minded perspective to legal problems.`,
     email: "india@vijaibhavalawfirm.com",
     education: [
       {
-        institution: "University of Delhi",
-        degree: "B.Com. LL.B.",
+        institution: "C C S, Meerut",
+        degree: "B.A LL.B.",
       },
     ],
     barAdmissions: null,
@@ -243,7 +239,7 @@ export const teamMembers = [
         " Negotiated high-stakes settlements in technology and IP matters",
       ],
     },
-    title: "Partner",
+    title: "Senior Associate",
     specialty: "Litigation & Dispute Resolution",
     practiceAreas: [
       "Litigation",
@@ -275,7 +271,7 @@ export const teamMembers = [
   {
     id: "avinash-singh",
     name: "Avinash Singh",
-    title: "Partner",
+    title: "Associate",
     specialty: "Aviation & Maritime Law",
     practiceAreas: [
       "Employment Law",
@@ -311,7 +307,7 @@ export const teamMembers = [
   {
     id: "khusbu-kumari",
     name: "Khushbu Kumari",
-    title: "Partner",
+    title: "Associate",
     specialty: "Matrimonial & Family Law",
     practiceAreas: [
       "Matrimonial Law",

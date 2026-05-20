@@ -35,7 +35,7 @@ export const submitApplication = async (req, res, next) => {
     const saved = await newApplication.save();
 
     adminCareerEmail(newApplication);
-    careerEmail(newApplication.email);
+    careerEmail(newApplication);
 
     res.status(201).json(newApplication);
   } catch (error) {

@@ -173,13 +173,13 @@ export default function Career() {
               {
                 quote:
                   "The mentorship I've received here has accelerated my career by years.",
-                name: "Jyoti Sharma, Partner",
+                name: "Khushbu Kumari, Associate",
                 rating: 5,
               },
               {
                 quote:
                   "Vijai Bhava gives you real responsibility from day one. I was in a courtroom in my first month.",
-                name: "Pratham Verma, Partner",
+                name: "Pratham Verma, Senior Associate",
                 rating: 5,
               },
             ].map((q) => (

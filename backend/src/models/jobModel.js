@@ -10,7 +10,7 @@ const jobApplicationSchema = new mongoose.Schema(
     experience: { type: String, required: true },
     coverLetter: { type: String },
 
-    // store resume filename (accessible via /uploads/<filename>)
+    // store the Cloudinary resume URL
     resume: { type: String, required: true },
   },
   { timestamps: true },

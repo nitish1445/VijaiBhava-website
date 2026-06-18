@@ -1315,5 +1315,5 @@ export const adminCareerEmail = async (career) => {
   </html>
   `;
 
-  sendEmail(to, subject, message);
+  await sendEmail(to, subject, message);
 };

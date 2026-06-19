@@ -1,4 +1,4 @@
-# Vijai Bhava Law Firm â€” Freelance Project (Client Delivery)
+# Vijai Bhava Law Firm — Freelance Project (Client Delivery)
 
 > A concise project handover and deployment guide for the freelance website delivered to the client, Vijai Bhava Law Firm.
 
@@ -9,8 +9,8 @@
 
 ## Repository layout
 
-- `backend/` â€” Express API, configuration, routers, models, and upload assets.
-- `frontend/` â€” React + Vite app, Tailwind config, and production build config (includes `vercel.json`).
+- `backend/` — Express API, configuration, routers, models, and upload assets.
+- `frontend/` — React + Vite app, Tailwind config, and production build config (includes `vercel.json`).
 
 ## Tech stack
 
@@ -21,20 +21,20 @@
 ## Client & Project Scope
 
 - **Client:** Vijai Bhava Law Firm
-- **Project type:** Freelance delivery â€” website + backend API
+- **Project type:** Freelance delivery — website + backend API
 - **Scope / Deliverables:**
-	- Fully functional React frontend (client-facing website)
-	- Express backend API for contact and job application handling
-	- Email notifications via Gmail (Nodemailer)
-	- File upload handling and static serving from `/uploads`
-	- Documentation and deployment notes (this README)
+- Fully functional React frontend (client-facing website)
+- Express backend API for contact and job application handling
+- Email notifications via Gmail (Nodemailer)
+- File upload handling and static serving from `/uploads`
+- Documentation and deployment notes (this README)
 
 ## Handover & Support
 
 - This repository is the final deliverable for the client. Provide the client with the following to complete production rollout:
-	- Production `MONGODB_URI` and SMTP credentials configured in the host environment
-	- Deployed backend URL (update frontend API base if needed)
-	- DNS records and SSL for the chosen domain (e.g., `vijaibhavalawfirm.com`)
+- Production `MONGODB_URI` and SMTP credentials configured in the host environment
+- Deployed backend URL (update frontend API base if needed)
+- DNS records and SSL for the chosen domain (e.g., `vijaibhavalawfirm.com`)
 - Recommend a short support period after handoff for bug fixes and small adjustments; specify SLA and billing in your client contract.
 
 ## Prerequisites
@@ -48,10 +48,10 @@
 
 Create a `.env` file in `backend/` with the following variables:
 
-- `MONGODB_URI` â€” MongoDB connection string
-- `GMAIL_ID` â€” Gmail address used to send emails
-- `GMAIL_PASSKEY` â€” App password / SMTP password for the Gmail account
-- `PORT` â€” (optional) Backend port; defaults to `5000`
+- `MONGODB_URI` — MongoDB connection string
+- `GMAIL_ID` — Gmail address used to send emails
+- `GMAIL_PASSKEY` — App password / SMTP password for the Gmail account
+- `PORT` — (optional) Backend port; defaults to `5000`
 
 Example `backend/.env`:
 
@@ -64,7 +64,7 @@ PORT=5000
 
 Note: If you use Gmail, create an App Password and use that for `GMAIL_PASSKEY` (recommended). Do not commit `.env` to source control.
 
-## Backend â€” Run locally
+## Backend — Run locally
 
 1. Install dependencies
 
@@ -83,12 +83,12 @@ npm run dev
 
 The server listens on `process.env.PORT || 5000`. Key routes:
 
-- `GET /` â€” basic health route
-- `POST /contact` â€” contact form route (see `src/routers/contactRouter.js`)
-- `POST /applications` â€” job application route (see `src/routers/jobRouter.js`)
-- `/uploads/*` â€” static file serving for uploaded files
+- `GET /` — basic health route
+- `POST /contact` — contact form route (see `src/routers/contactRouter.js`)
+- `POST /applications` — job application route (see `src/routers/jobRouter.js`)
+- `/uploads/*` — static file serving for uploaded files
 
-## Frontend â€” Run locally
+## Frontend — Run locally
 
 1. Install dependencies
 
@@ -113,11 +113,9 @@ npm run build
 
 ## Deployment notes
 
-- Frontend: The repo includes `frontend/vercel.json` â€” the frontend is ready to deploy to Vercel. Point Vercel to the `frontend/` directory as the project root or configure a monorepo setup and set the build command to `npm run build` and the output directory to `dist`.
+- Frontend: The repo includes `frontend/vercel.json` — the frontend is ready to deploy to Vercel. Point Vercel to the `frontend/` directory as the project root or configure a monorepo setup and set the build command to `npm run build` and the output directory to `dist`.
 
 - Backend: Deploy the `backend/` folder to your hosting provider of choice (Render, Heroku, Railway, DigitalOcean App Platform, etc.). Ensure the environment variables from the **Environment variables** section are configured in the provider dashboard.
-
-- Hostinger: create a Node.js app for the `backend/` folder, set the startup command to `npm start`, and point the app's document/root directory to `backend/`. Add the same `MONGODB_URI`, `GMAIL_ID`, `GMAIL_PASSKEY`, and `PORT` values in Hostinger's environment variables panel. After deployment, use the Hostinger app URL as your backend base URL.
 
 - When deploying together, configure the frontend to call the deployed backend base URL (replace any hardcoded `http://localhost:5173` origin checks or set the CORS origin accordingly).
 

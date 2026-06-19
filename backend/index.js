@@ -41,6 +41,13 @@ if (!fs.existsSync(uploadsDir)) {
 app.use("/uploads", express.static(uploadsDir));
 
 // API Routes
+app.get(["/", "/api"], (req, res) => {
+  res.json({ message: "Vijai Bhava Law Firm API is running" });
+});
+
+app.use("/api/contact", contactRoutes);
+app.use("/api/applications", jobRoutes);
+
 app.use("/contact", contactRoutes);
 app.use("/applications", jobRoutes);
 

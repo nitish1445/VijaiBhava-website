@@ -117,6 +117,8 @@ npm run build
 
 - Backend: Deploy the `backend/` folder to your hosting provider of choice (Render, Heroku, Railway, DigitalOcean App Platform, etc.). Ensure the environment variables from the **Environment variables** section are configured in the provider dashboard.
 
+- Hostinger: create a Node.js app for the `backend/` folder, set the startup command to `npm start`, and point the app's document/root directory to `backend/`. Add the same `MONGODB_URI`, `GMAIL_ID`, `GMAIL_PASSKEY`, and `PORT` values in Hostinger's environment variables panel. After deployment, use the Hostinger app URL as your backend base URL.
+
 - When deploying together, configure the frontend to call the deployed backend base URL (replace any hardcoded `http://localhost:5173` origin checks or set the CORS origin accordingly).
 
 ## Useful tips & notes

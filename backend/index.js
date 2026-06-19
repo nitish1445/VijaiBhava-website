@@ -41,11 +41,16 @@ if (!fs.existsSync(uploadsDir)) {
 app.use("/uploads", express.static(uploadsDir));
 
 // Middleware: return 503 for API calls if DB not connected
+// Do NOT block frontend GET routes such as '/contact' (SPA pages).
 app.use((req, res, next) => {
-  const isApiCall = req.path.startsWith("/api") || req.path.startsWith("/contact") || req.path.startsWith("/applications");
-  if (isApiCall && !isDBConnected()) {
+  const isApiPrefixed = req.path.startsWith("/api");
+  const isLegacyWrite = (req.path.startsWith("/contact") || req.path.startsWith("/applications")) && req.method !== "GET";
+  const shouldCheckDB = isApiPrefixed || isLegacyWrite;
+
+  if (shouldCheckDB && !isDBConnected()) {
     return res.status(503).json({ message: "Service temporarily unavailable - database not connected" });
   }
+
   next();
 });
 

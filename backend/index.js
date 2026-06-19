@@ -40,7 +40,7 @@ app.use("/applications", jobRoutes);
 // runs only when the routes is being hit
 app.get("/", (req, res) => {
   console.log("Route hit !");
-  res.send("Server is working");
+  // res.send("Server is working");
 });
 
 app.use((req, res) => {

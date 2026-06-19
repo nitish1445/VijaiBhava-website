@@ -31,6 +31,9 @@ if (!fs.existsSync(uploadsDir)) {
 }
 app.use("/uploads", express.static(uploadsDir));
 
+const distDir = path.join(__dirname, "dist");
+app.use(express.static(distDir));
+
 app.use("/contact", contactRoutes);
 app.use("/applications", jobRoutes);
 
@@ -38,6 +41,10 @@ app.use("/applications", jobRoutes);
 app.get("/", (req, res) => {
   console.log("Route hit !");
   res.send("Server is working");
+});
+
+app.use((req, res) => {
+  res.sendFile(path.join(distDir, "index.html"));
 });
 
 //global error handler
@@ -57,3 +64,6 @@ app.listen(port, async () => {
     console.error("😬 Error starting server:", error);
   }
 });
+
+
+

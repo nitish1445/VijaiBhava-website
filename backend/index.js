@@ -7,7 +7,7 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 
-import connectDB from "./src/config/db.js";
+import { connectDB, isDBConnected } from "./src/config/db.js";
 import contactRoutes from "./src/routers/contactRouter.js";
 import jobRoutes from "./src/routers/jobRouter.js";
 
@@ -40,6 +40,15 @@ if (!fs.existsSync(uploadsDir)) {
 
 app.use("/uploads", express.static(uploadsDir));
 
+// Middleware: return 503 for API calls if DB not connected
+app.use((req, res, next) => {
+  const isApiCall = req.path.startsWith("/api") || req.path.startsWith("/contact") || req.path.startsWith("/applications");
+  if (isApiCall && !isDBConnected()) {
+    return res.status(503).json({ message: "Service temporarily unavailable - database not connected" });
+  }
+  next();
+});
+
 // API Routes
 app.get(["/", "/api"], (req, res) => {
   res.json({ message: "Vijai Bhava Law Firm API is running" });
@@ -66,14 +75,29 @@ app.use((err, req, res, next) => {
   const ErrorMessage = err.message || "Internal Server Error";
   const StatusCode = err.statusCode || 500;
 
-  console.log("Error found:", {
-    ErrorMessage,
-    StatusCode,
-  });
+  const logEntry = `${new Date().toISOString()} - Error: ${ErrorMessage} - Status: ${StatusCode} - Path: ${req.method} ${req.originalUrl}\n${err.stack || ''}\n`;
+  console.error(logEntry);
+  try {
+    fs.appendFileSync(path.join(__dirname, 'logs', 'error.log'), logEntry + '\n');
+  } catch (e) {
+    // ignore file write errors
+  }
 
-  res.status(StatusCode).json({
-    message: ErrorMessage,
-  });
+  res.status(StatusCode).json({ message: ErrorMessage });
+});
+
+// Global process handlers
+process.on('unhandledRejection', (reason) => {
+  const msg = `${new Date().toISOString()} - UnhandledRejection: ${reason && reason.stack ? reason.stack : reason}`;
+  console.error(msg);
+  try { fs.appendFileSync(path.join(__dirname, 'logs', 'error.log'), msg + '\n'); } catch (e) {}
+});
+
+process.on('uncaughtException', (err) => {
+  const msg = `${new Date().toISOString()} - UncaughtException: ${err && err.stack ? err.stack : err}`;
+  console.error(msg);
+  try { fs.appendFileSync(path.join(__dirname, 'logs', 'error.log'), msg + '\n'); } catch (e) {}
+  // optionally exit to allow process manager to restart
 });
 
 // Start Server

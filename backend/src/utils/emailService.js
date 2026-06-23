@@ -674,7 +674,7 @@ export const careerEmail = async (career) => {
 };
 
 export const adminContactEmail = async (contact) => {
-  const to = "nitishroy.dz@gmail.com";
+  const to = "vijaibhavalawfirm@gmail.com";
   const subject = "A new Contact Form Recieved from Website";
 
   const message = `
@@ -982,7 +982,7 @@ export const adminContactEmail = async (contact) => {
 };
 
 export const adminCareerEmail = async (career) => {
-  const to = "nitishroy.dz@gmail.com";
+  const to = "vijaibhavalawfirm@gmail.com";
 
   const subject = `A New Career Application Received for ${career.job}`;
 

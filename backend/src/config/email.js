@@ -53,6 +53,8 @@ export const sendEmail = async (to, subject, message) => {
 
     console.log("Email sent:", info.messageId);
 
+    console.log("Email sent:", info.messageId);
+
     return info;
   } catch (error) {
     console.error("EMAIL ERROR:", error);

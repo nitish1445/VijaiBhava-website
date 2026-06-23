@@ -105,10 +105,13 @@ export const createContact = async (req, res) => {
 
     const savedContact = await newContact.save();
 
+    console.log("✅ Contact saved:", savedContact._id);
     // send emails
     await adminContactEmail(savedContact);
+    console.log("✅ Admin email sent");
     await contactEmail(savedContact);
 
+    console.log("✅ User email sent");
     return res.status(201).json({
       success: true,
       message: "Form submitted successfully",

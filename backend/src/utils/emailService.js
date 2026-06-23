@@ -978,7 +978,7 @@ export const adminContactEmail = async (contact) => {
   </html>
   `;
 
-  sendEmail(to, subject, message);
+ await sendEmail(to, subject, message);
 };
 
 export const adminCareerEmail = async (career) => {

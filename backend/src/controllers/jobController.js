@@ -29,7 +29,6 @@ export const submitApplication = async (req, res, next) => {
       experience: experience.trim(),
       coverLetter: (coverLetter || "").trim(),
       resume:
-        `http://localhost:4500/uploads/${file.filename}` ||
         `https://vijaibhavalawfirm.com/uploads/${file.filename}`,
     });
 

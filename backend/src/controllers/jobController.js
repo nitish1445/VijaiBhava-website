@@ -1,6 +1,7 @@
 import JobApplication from "../models/jobModel.js";
 import { adminCareerEmail, careerEmail } from "../utils/emailService.js";
 
+console.log("Job application controller is running on top");
 // Controller: handle job application submission
 export const submitApplication = async (req, res, next) => {
   try {
@@ -42,3 +43,5 @@ export const submitApplication = async (req, res, next) => {
     next(error);
   }
 };
+
+console.log("Job application controller is running");

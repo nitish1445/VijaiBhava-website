@@ -2,6 +2,7 @@ import { sendEmail } from "../config/email.js";
 import Contact from "../models/contactModel.js";
 import { adminContactEmail, contactEmail } from "../utils/emailService.js";
 
+console.log("Contact is running on /contact controller");
 export const createContact = async (req, res, next) => {
   try {
     const {
@@ -52,3 +53,5 @@ export const createContact = async (req, res, next) => {
     next(error);
   }
 };
+
+console.log("form submission controller is running");

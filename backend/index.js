@@ -44,6 +44,7 @@ app.use("/uploads", express.static(uploadsDir));
 app.use("/contact", contactRoutes);
 app.use("/applications", jobRoutes);
 
+console.log("Contact is running on /contact");
 // React Build Folder
 const distDir = path.join(__dirname, "dist");
 

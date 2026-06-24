@@ -55,29 +55,6 @@ export const jobs = [
   },
 
   {
-    slug: "paralegal-real-estate",
-    title: "Paralegal – Real Estate",
-    dept: "Real Estate Law",
-    location: "Gurgaon",
-    type: "Full-Time",
-    exp: "1–3 years",
-    description:
-      "Support real estate transactions including property due diligence, title verification, and documentation.",
-    responsibilities: [
-      "Prepare and review title reports and agreements.",
-      "Assist in property due diligence and documentation.",
-      "Coordinate with clients, developers, and authorities.",
-      "Maintain records and compliance documentation.",
-    ],
-    requirements: [
-      "1+ years experience in real estate legal support.",
-      "Knowledge of land laws and registration process.",
-      "Strong organizational and documentation skills.",
-    ],
-    perks: ["Stable work environment", "Learning exposure in real estate law"],
-  },
-
-  {
     slug: "legal-intern",
     title: "Legal Intern",
     dept: "Multiple Practice Areas",

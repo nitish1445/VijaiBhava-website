@@ -1,5 +1,6 @@
 import jobs from "../assets/careerData";
 import JobCard from "../components/JobCard";
+import CareerEmptyState from "../components/CareerEmptyState";
 import {
   FaBriefcase,
   FaHeartbeat,
@@ -216,21 +217,25 @@ export default function Career() {
           </div>
 
           <div className="space-y-0 border-l border-t border-slate-200">
-            {jobs.map((job) => (
-              <JobCard key={job.slug} job={job} />
-            ))}
+            {Array.isArray(jobs) && jobs.length > 0 ? (
+              jobs.map((job) => <JobCard key={job.slug} job={job} />)
+            ) : (
+              <CareerEmptyState />
+            )}
           </div>
 
-          <p className="text-slate-500 text-sm text-center mt-8">
-            Don't see the right fit?{" "}
-            <a
-              href="mailto:india@vijaibhavalawfirm.com"
-              className="text-[#c9a84c] hover:underline"
-            >
-              Send us your resume
-            </a>{" "}
-            and we'll keep it on file.
-          </p>
+          {Array.isArray(jobs) && jobs.length > 0 && (
+            <p className="text-slate-500 text-sm text-center mt-8">
+              Don't see the right fit?{" "}
+              <a
+                href="mailto:india@vijaibhavalawfirm.com"
+                className="text-[#c9a84c] hover:underline"
+              >
+                Send us your resume
+              </a>{" "}
+              and we'll keep it on file.
+            </p>
+          )}
         </div>
       </section>
     </main>

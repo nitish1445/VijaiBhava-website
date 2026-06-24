@@ -12,11 +12,11 @@ export default function Service() {
         />
         <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
           <span className="section-label">What We Do</span>
-          <h1 className="section-title-white text-4xl md:text-6xl max-w-2xl">
+          <h1 className="section-title-white text-3xl sm:text-4xl md:text-6xl max-w-2xl">
             Practice Areas
           </h1>
           <div className="gold-divider" />
-          <p className="text-white/50 max-w-xl text-sm leading-relaxed">
+          <p className="text-white/50 max-w-xl text-sm sm:text-[15px] leading-relaxed">
             Expert legal counsel across a comprehensive range of practice areas.
             Whatever your legal challenge, our attorneys have the expertise to guide you.
           </p>
@@ -35,7 +35,9 @@ export default function Service() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-label">In Depth</span>
-            <h2 className="section-title">Our Practice Areas</h2>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">
+              Our Practice Areas
+            </h2>
             <div className="gold-divider mx-auto" />
           </div>
 
@@ -47,20 +49,20 @@ export default function Service() {
                 <Link
                   key={svc.slug}
                   to={`/services/${svc.slug}`}
-                  className={`border-r border-b border-slate-200 p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 group hover:bg-[#faf8f3] transition-colors duration-300 text-left ${
+                  className={`border-r border-b border-slate-200 p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-3 gap-8 group hover:bg-[#faf8f3] transition-colors duration-300 text-left ${
                     i % 2 === 1 ? "bg-[#faf8f3]/50" : "bg-white"
                   }`}
                 >
                   <div className="lg:col-span-2">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-3xl transition-transform duration-300 group-hover:scale-110">
+                      <span className="text-2xl sm:text-3xl transition-transform duration-300 group-hover:scale-110">
                         <ServiceIcon />
                       </span>
-                      <h3 className="font-serif text-2xl text-[#0a1628] group-hover:text-[#c9a84c] transition-colors">
+                      <h3 className="font-serif text-xl sm:text-2xl text-[#0a1628] group-hover:text-[#c9a84c] transition-colors">
                         {svc.title}
                       </h3>
                     </div>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed">
                       {svc.description}
                     </p>
                   </div>

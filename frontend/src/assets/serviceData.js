@@ -7,6 +7,7 @@ import {
   FaShieldAlt,
   FaLaptopCode,
   FaPlane,
+  FaRupeeSign,
 } from "react-icons/fa";
 const user = null;
 
@@ -537,7 +538,12 @@ export const services = [
       "Legal support for aircraft, shipping, logistics, and cross-border transport matters.",
     longDescription:
       "Our aviation and maritime practice advises clients on transactions, regulatory compliance, disputes, and operational risk across highly regulated transport sectors. We handle ship arrests, cargo claims, aircraft leasing, insurance, and safety-related matters with speed and precision because these industries often cannot wait for slow legal answers.",
-    practiceAreas: ["Aviation Law", "Employment Law", "Service Matters","White-Collar Crime"],
+    practiceAreas: [
+      "Aviation Law",
+      "Employment Law",
+      "Service Matters",
+      "White-Collar Crime",
+    ],
     features: [
       {
         title: "Aircraft Leasing",
@@ -595,6 +601,75 @@ export const services = [
           "Passenger claims, mass tort coordination, insurer disputes, and carrier contractual litigation.",
         details:
           "We handle passenger compensation claims, mass tort coordination after incidents, insurer disputes, and contractual litigation between carriers, lessors and service providers, focusing on rapid relief and liability allocation.",
+      },
+    ],
+  },
+  {
+    slug: "gst-services",
+    icon: FaRupeeSign,
+    title: "GST Advisory Services",
+    description:
+      "Providing strategic GST advisory, compliance support, dispute resolution, and tax litigation services for businesses across industries.",
+    longDescription:
+      "Our GST practice assists businesses in navigating India's evolving indirect tax landscape. We advise clients on GST structuring, classification issues, input tax credit optimization, compliance obligations, departmental investigations, and complex tax disputes. From preventive advisory and transaction planning to appellate proceedings and constitutional challenges before higher courts, we deliver practical and commercially focused solutions that safeguard business interests and ensure regulatory compliance.",
+
+    practiceAreas: ["GST Advisory", "Indirect Tax Advisory", "Tax Litigation"],
+
+    features: [
+      {
+        title: " Advisory & Structuring (Pre-litigation)",
+        description:
+          "Tax-efficient transaction planning, classification analysis, and compliance-focused business structuring.",
+      },
+      {
+        title: " Departmental Adjudication & Audit Defense",
+        description:
+          "Representation during GST audits, DGGI investigations, search proceedings, and departmental inquiries.",
+      },
+      {
+        title: "High Court & Supreme Court Litigation",
+        description:
+          "Comprehensive representation before appellate authorities, High Courts, and the Supreme Court.",
+      },
+      {
+        title: "Advance Rulings Practice",
+        description:
+          "Obtaining legal certainty through AAR and AAAR proceedings on complex GST issues.",
+      },
+    ],
+
+    lawyers: [{ id: "gaurav-gulati" }],
+
+    relatedServices: ["corporate-law", "litigation"],
+
+    caseTypes: [
+      {
+        title: "Advisory & Structuring (Pre-litigation)",
+        description:
+          "Preventive GST advisory focused on tax efficiency, compliance, and minimizing future disputes.",
+        details:
+          "Corporate clients rely heavily on preventative counsel to minimize tax exposure and avoid anti-profiteering or departmental scrutiny. We advise on classification disputes involving the determination of correct HSN (Harmonized System of Nomenclature) or SAC (Services Accounting Code) classifications for complex products, composite supplies, and mixed supplies. Our services include Input Tax Credit (ITC) optimization, guidance on cross-border transactions, high-value procurement structures, and navigating restrictions under Section 17(5) of the CGST Act. We also draft and review commercial agreements to clearly allocate tax liabilities, indemnity obligations, vendor compliance responsibilities, and Reverse Charge Mechanism (RCM) implications.",
+      },
+      {
+        title: "Departmental Adjudication & Audit Defense",
+        description:
+          "Representation during GST audits, investigations, adjudication proceedings, and appellate challenges.",
+        details:
+          "Most GST disputes originate at the departmental level. We represent businesses during audits conducted under Section 65 of the CGST Act and investigations initiated by the Directorate General of GST Intelligence (DGGI), including search, seizure, and allegations relating to fake invoicing or wrongful ITC claims. Our team prepares detailed replies to Show Cause Notices issued under Section 73 and Section 74, addressing both factual and legal issues. We also represent taxpayers in adjudication proceedings and file appeals before the Appellate Authority against adverse Orders-in-Original (OIO), seeking effective relief through well-structured legal submissions.",
+      },
+      {
+        title: "High Court & Supreme Court Litigation",
+        description:
+          "Constitutional challenges, writ petitions, and appellate GST litigation before higher courts.",
+        details:
+          "Given the evolving GST appellate framework, significant disputes frequently require intervention from constitutional courts. We represent clients before High Courts under Article 226 in matters involving violations of natural justice, unlawful departmental actions, constitutional challenges to statutory provisions, and disputes relating to blocked electronic credit ledgers under Rule 86A. Our practice also extends to the Supreme Court through Special Leave Petitions under Article 136 and statutory appeals involving complex interpretative questions, cross-border taxation issues, and landmark GST disputes with substantial commercial implications.",
+      },
+      {
+        title: "Advance Rulings Practice",
+        description:
+          "Obtaining regulatory certainty through AAR and AAAR proceedings before business decisions are implemented.",
+        details:
+          "We assist businesses in securing legal certainty before launching new products, services, or business models through Advance Ruling mechanisms. Our team prepares and files applications before the Authority for Advance Ruling (AAR) and represents clients before both AAR and the Appellate Authority for Advance Ruling (AAAR) under Section 97 of the CGST Act. We seek authoritative clarity on classification disputes, GST rate applicability, valuation issues, registration requirements, and other tax implications, enabling businesses to make informed commercial decisions with reduced regulatory risk.",
       },
     ],
   },

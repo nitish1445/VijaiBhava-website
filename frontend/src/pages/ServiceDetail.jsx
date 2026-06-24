@@ -13,6 +13,9 @@ import {
   FaLaptopCode,
   FaPlane,
   FaFileAlt,
+  FaCalculator,
+  FaFileInvoiceDollar,
+  FaClipboardCheck,
 } from "react-icons/fa";
 
 export default function ServiceDetail() {
@@ -106,6 +109,9 @@ export default function ServiceDetail() {
 
   function getCaseTypeIcon(title) {
     const t = title.toLowerCase();
+    if (t.includes("advisory") || t.includes("structuring")) return FaCalculator;
+    if (t.includes("audit") || t.includes("adjudication")) return FaClipboardCheck;
+    if (t.includes("advance rul") || t.includes("ruling")) return FaFileInvoiceDollar;
     if (
       t.includes("merger") ||
       t.includes("acquisit") ||
@@ -184,12 +190,14 @@ export default function ServiceDetail() {
           >
             ← Back to Services
           </Link>
-          <span className="section-label">Practice Area</span>
-          <h1 className="section-title-white text-5xl md:text-7xl max-w-4xl">
+          <span className="section-label text-[10px] sm:text-[11px]">
+            Practice Area
+          </span>
+          <h1 className="section-title-white text-3xl sm:text-4xl md:text-6xl max-w-4xl">
             {service.title}
           </h1>
           <div className="gold-divider" />
-          <p className="text-white/55 max-w-2xl text-sm md:text-base leading-relaxed">
+          <p className="text-white/55 max-w-2xl text-sm sm:text-[15px] md:text-base leading-relaxed">
             {service.description}
           </p>
         </div>
@@ -198,12 +206,14 @@ export default function ServiceDetail() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <span className="section-label">Overview</span>
-            <h2 className="section-title text-3xl md:text-4xl mb-6">
+            <span className="section-label text-[10px] sm:text-[11px]">
+              Overview
+            </span>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl mb-6">
               Strategic counsel tailored to your matter
             </h2>
             <div className="gold-divider" />
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed max-w-3xl">
+            <p className="text-slate-600 text-sm sm:text-[15px] md:text-base leading-relaxed max-w-3xl">
               {service.longDescription}
             </p>
           </div>
@@ -220,7 +230,7 @@ export default function ServiceDetail() {
                     <h3 className="text-[#0a1628] text-sm font-semibold tracking-wide uppercase">
                       {feature.title}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mt-1">
+                    <p className="text-slate-500 text-sm sm:text-[15px] leading-relaxed mt-1">
                       {feature.description}
                     </p>
                   </div>
@@ -234,10 +244,14 @@ export default function ServiceDetail() {
       <section className="py-24 bg-[#faf8f3]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
-            <span className="section-label">Sub-Services</span>
-            <h2 className="section-title">Case Types & Advisory Scope</h2>
+            <span className="section-label text-[10px] sm:text-[11px]">
+              Sub-Services
+            </span>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">
+              Case Types & Advisory Scope
+            </h2>
             <div className="gold-divider" />
-            <p className="text-slate-500 text-sm max-w-2xl leading-relaxed">
+            <p className="text-slate-500 text-sm sm:text-[15px] max-w-2xl leading-relaxed">
               Each practice area is structured around the matters clients most
               often need help with.
             </p>
@@ -272,7 +286,7 @@ export default function ServiceDetail() {
                     </button>
                   </div>
 
-                  <h3 className="font-serif text-2xl text-[#0a1628] group-hover:text-white transition-colors mb-3">
+                  <h3 className="font-serif text-xl sm:text-2xl text-[#0a1628] group-hover:text-white transition-colors mb-3">
                     {ct.title}
                   </h3>
 
@@ -289,8 +303,12 @@ export default function ServiceDetail() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
-            <span className="section-label">Lawyers</span>
-            <h2 className="section-title">Our Team for This Matter</h2>
+            <span className="section-label text-[10px] sm:text-[11px]">
+              Lawyers
+            </span>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">
+              Our Team for This Matter
+            </h2>
             <div className="gold-divider" />
           </div>
 
@@ -306,8 +324,12 @@ export default function ServiceDetail() {
         <section className="py-24 bg-[#faf8f3]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-14">
-              <span className="section-label">Related Services</span>
-              <h2 className="section-title">Connected Practice Areas</h2>
+              <span className="section-label text-[10px] sm:text-[11px]">
+                Related Services
+              </span>
+              <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">
+                Connected Practice Areas
+              </h2>
               <div className="gold-divider" />
             </div>
 
@@ -325,10 +347,10 @@ export default function ServiceDetail() {
                       <div className="text-3xl mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:text-white">
                         <RelatedIcon />
                       </div>
-                      <h3 className="font-serif text-2xl text-[#0a1628] group-hover:text-white transition-colors mb-3">
+                      <h3 className="font-serif text-xl sm:text-2xl text-[#0a1628] group-hover:text-white transition-colors mb-3">
                         {related.title}
                       </h3>
-                      <p className="text-slate-500 text-sm leading-relaxed group-hover:text-white/60 transition-colors">
+                      <p className="text-slate-500 text-sm sm:text-[15px] leading-relaxed group-hover:text-white/60 transition-colors">
                         {related.description}
                       </p>
                     </Link>
@@ -342,10 +364,10 @@ export default function ServiceDetail() {
 
       <section className="bg-[#c9a84c] py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-4xl text-[#0a1628] font-light mb-4">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0a1628] font-light mb-4">
             Ready to discuss your matter?
           </h2>
-          <p className="text-[#0a1628]/75 text-sm mb-8 leading-relaxed">
+          <p className="text-[#0a1628]/75 text-sm sm:text-[15px] mb-8 leading-relaxed">
             Speak with our team about the right strategy, timeline, and next
             steps for your case.
           </p>

@@ -202,6 +202,7 @@ export const teamMembers = [
     practiceAreas: [
       "Cyber Law",
       "Commercial Contracts",
+      "GST Advisory",
       "Transaction Advisory",
       "Regulatory Matters",
     ],

@@ -279,7 +279,7 @@ export default function Home() {
               All Practice Areas →
             </Link>
           </div>
-          <ServicesGrid limit={8} />
+          <ServicesGrid limit={6} />
         </div>
       </section>
 

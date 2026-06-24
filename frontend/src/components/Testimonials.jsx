@@ -1,35 +1,50 @@
 import { useState, useEffect } from "react";
 
 const testimonials = [
-  {
-    quote:
-      "Vijai Bhava Law Firm handled our corporate compliance and restructuring with exceptional precision. Their understanding of Indian regulatory frameworks gave us complete confidence.",
-    name: "Rajesh Sharma",
-    title: "Director, Sharma Infra Pvt. Ltd.",
-    initials: "RS",
-  },
-  {
-    quote:
-      "I was facing a serious legal dispute related to property ownership. Their team guided me step-by-step and resolved the matter efficiently. Truly dependable advocates.",
-    name: "Anita Verma",
-    title: "Business Owner",
-    initials: "AV",
-  },
-  {
-    quote:
-      "Their legal advisory helped us navigate complex startup agreements and investor documentation. They combine legal expertise with practical business insight.",
-    name: "Kunal Mehta",
-    title: "Founder, FinEdge Technologies",
-    initials: "KM",
-  },
-  {
-    quote:
-      "From documentation to court representation, everything was handled with professionalism and clarity. Their commitment and responsiveness stood out.",
-    name: "Sandeep Gupta",
-    title: "Real Estate Consultant",
-    initials: "SG",
-  },
+{
+quote:
+"I was dealing with a complicated family property dispute that had been pending for years. The team explained every step clearly and helped us reach a fair resolution without unnecessary delays.",
+name: "Rakesh Tiwari",
+title: "Property Owner",
+initials: "RT",
+},
+{
+quote:
+"Their guidance during my GST notice proceedings was exceptional. They prepared a detailed response, represented me before the authorities, and helped resolve the matter professionally.",
+name: "Pankaj Agrawal",
+title: "Business Owner",
+initials: "PA",
+},
+{
+quote:
+"Buying my first home came with several legal concerns regarding documentation and title verification. Vijai Bhava Law Firm handled everything carefully and gave me complete peace of mind.",
+name: "Neha Singh",
+title: "Software Professional",
+initials: "NS",
+},
+{
+quote:
+"I approached the firm regarding an employment dispute and was impressed by their responsiveness and practical advice. They helped me understand my rights and secure a favorable outcome.",
+name: "Amit Mishra",
+title: "Senior Engineer",
+initials: "AM",
+},
+{
+quote:
+"Their team assisted us with startup agreements, founder documentation, and investor negotiations. The advice was practical, timely, and aligned with our business goals.",
+name: "Karan Mehta",
+title: "Startup Founder",
+initials: "KM",
+},
+{
+quote:
+"From legal consultation to court representation, the entire process was handled with professionalism and transparency. I always felt informed and supported throughout my case.",
+name: "Sunita Verma",
+title: "Educator",
+initials: "SV",
+},
 ];
+
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);

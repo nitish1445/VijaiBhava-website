@@ -561,7 +561,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="btn-gold text-[11px] py-2 px-6 mt-6 inline-block"
               >
-                Open Vijai Bhava Law Firm Location
+                Open in google map
               </a>
             </div>
 

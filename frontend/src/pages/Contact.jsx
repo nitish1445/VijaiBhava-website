@@ -7,12 +7,13 @@ import toast from "react-hot-toast";
 const offices = [
   {
     city: "New Delhi (HQ)",
-    address: " C12/12 1st Floor MIG Flat Sec 03 ",
-    state: "Rohini Delhi, 110085",
+    address: "1st Floor, C12/12, Sec 03, Rohini",
+    state: "Delhi 110085",
     phone: "+91 1135783931",
   },
 ];
-const mapQuery = encodeURIComponent(offices[0].address);
+const googleMapsDirectionsUrl = `https://www.google.com/maps/search/?api=1&query=Vijai+Bhava+Law+Firm+1st+Floor+C12%2F12+Sec+03+Rohini+Delhi+110085`;
+const googleMapsEmbedUrl = `https://www.google.com/maps?q=Vijai+Bhava+Law+Firm+1st+Floor+C12%2F12+Sec+03+Rohini+Delhi+110085&output=embed`;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -545,30 +546,30 @@ export default function Contact() {
               </span>
 
               <h2 className="font-serif text-2xl sm:text-3xl text-white mt-3 mb-4 leading-snug">
-                Visit Our Rohini Office Location
+                Visit Vijai Bhava Law Firm Office Location
               </h2>
 
               <p className="text-white/60 text-sm leading-relaxed">
-                C12/12 1st Floor Sec 03
+                1st Floor, C12/12, Sec 03, Rohini
               </p>
 
-              <p className="text-white/40 text-xs mt-1">Rohini Delhi, 110085</p>
+              <p className="text-white/40 text-xs mt-1">Delhi 110085</p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=C12/12+1st+Floor+MIG+Flat+Sec+03+Rohini+Delhi+110085"
+                href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold text-[11px] py-2 px-6 mt-6 inline-block"
               >
-                Open in Google Maps
+                Open Vijai Bhava Law Firm Location
               </a>
             </div>
 
             {/* Map */}
             <div className="w-full h-[260px] sm:h-[300px] md:h-[380px] rounded-lg overflow-hidden border border-white/10 shadow-sm">
               <iframe
-                title="Vijai Bhava Law Firm Office Location"
-                src="https://www.google.com/maps?q=C12/12+1st+Floor+Sec+03+Rohini+Delhi+110085&output=embed"
+                title="Vijai Bhava Office Location"
+                src={googleMapsEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -71,7 +71,7 @@ export const teamMembers = [
 
   He also counsels clients on cyber law, data protection compliance, and technology-related commercial disputes — marrying legal strategy with practical product considerations. Vicky frequently leads cross-border coordination on complex infringement and licensing matters.
 
-  Vicky holds a B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University and completed advanced legal studies at Campus Law Center, University of Delhi.`,
+  Vicky holds a B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University.`,
     email: "india@vijaibhavalawfirm.com",
     education: [
       {
@@ -284,7 +284,7 @@ export const teamMembers = [
 
   He handles employment disputes, arbitration and policy reviews for regulated entities, combining sector knowledge with a pragmatic legal approach. Avinash also regularly participates in industry-led compliance initiatives and risk assessments.
 
-  Avinash earned his B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University and completed postgraduate studies at Campus Law Center, University of Delhi. He is admitted to practice before several tribunals and courts.`,
+  Avinash earned his B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University. He is admitted to practice before several tribunals and courts.`,
     email: "india@vijaibhavalawfirm.com",
     education: [
       {
@@ -320,7 +320,7 @@ export const teamMembers = [
 
   She handles complex custody cases, financial settlements, and related relief proceedings, prioritizing practical, client-centered solutions and where necessary robust litigation strategy.
 
-  Khushbu holds a B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University and completed advanced legal training at Campus Law Center, University of Delhi.`,
+  Khushbu holds a B.A. LL.B. (Hons.) from Dr. B.R. Ambedkar Bihar University .`,
     email: "india@vijaibhavalawfirm.com",
     education: [
       {

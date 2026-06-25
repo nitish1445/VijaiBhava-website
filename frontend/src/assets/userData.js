@@ -78,10 +78,10 @@ export const teamMembers = [
         institution: "Dr. B.R. Ambedkar Bihar University, Muzaffarpur",
         degree: "B.A. LL.B. (Hons.)",
       },
-      {
-        institution: "Campus Law Center (CLC), University of Delhi",
-        degree: "LL.M. (Corporate Law)",
-      },
+      // {
+      //   institution: "Campus Law Center (CLC), University of Delhi",
+      //   degree: "LL.M. (Corporate Law)",
+      // },
     ],
     barAdmissions: null,
     gender: "male",
@@ -291,10 +291,10 @@ export const teamMembers = [
         institution: "Dr. B.R. Ambedkar Bihar University, Muzaffarpur",
         degree: "B.A. LL.B. (Hons.)",
       },
-      {
-        institution: "Campus Law Center (CLC), University of Delhi",
-        degree: "LL.M. (Corporate Law)",
-      },
+      // {
+      //   institution: "Campus Law Center (CLC), University of Delhi",
+      //   degree: "LL.M. (Corporate Law)",
+      // },
     ],
     barAdmissions: ["Bar Council of Delhi", "Delhi High Court", "NCLT"],
     gender: "male",
@@ -327,10 +327,10 @@ export const teamMembers = [
         institution: "Dr. B.R. Ambedkar Bihar University, Muzaffarpur",
         degree: "B.A. LL.B. (Hons.)",
       },
-      {
-        institution: "Campus Law Center (CLC), University of Delhi",
-        degree: "LL.M. (Corporate Law)",
-      },
+      // {
+      //   institution: "Campus Law Center (CLC), University of Delhi",
+      //   degree: "LL.M. (Corporate Law)",
+      // },
     ],
     barAdmissions: ["Bar Council of Delhi", "Delhi High Court"],
     gender: "female",

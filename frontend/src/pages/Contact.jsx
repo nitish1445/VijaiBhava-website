@@ -549,7 +549,7 @@ export default function Contact() {
               </h2>
 
               <p className="text-white/60 text-sm leading-relaxed">
-                C12/12 1st Floor MIG Flat Sec 03
+                C12/12 1st Floor Sec 03
               </p>
 
               <p className="text-white/40 text-xs mt-1">Rohini Delhi, 110085</p>
@@ -568,7 +568,7 @@ export default function Contact() {
             <div className="w-full h-[260px] sm:h-[300px] md:h-[380px] rounded-lg overflow-hidden border border-white/10 shadow-sm">
               <iframe
                 title="Vijai Bhava Law Firm Office Location"
-                src="https://www.google.com/maps?q=C12/12+1st+Floor+MIG+Flat+Sec+03+Rohini+Delhi+110085&output=embed"
+                src="https://www.google.com/maps?q=C12/12+1st+Floor+Sec+03+Rohini+Delhi+110085&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
